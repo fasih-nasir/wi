@@ -15,7 +15,8 @@ import stats1 from "../image/stats1.jpg"
 import stats2 from "../image/stats2.jpg"
 import stats3 from "../image/stats3.jpg"
 import stats4 from "../image/stats4.jpg"
-
+import faqs from "../image/faqs.webp";
+import Footer from "./footer";
 export default function Home() {
   // ANTD
 
@@ -295,7 +296,7 @@ setInterval(() => {
 </div>
 {/* SERVICE */}
 {/* STATS */}
-<div className="container m-0 px-4 py-2">
+<div className="container m-0 px-3 px-lg-4 py-2">
      <div className="row d-flex justify-content-center align-items-center">
       <div className="col-lg-9 ">
 <h1 className="text-center mb-4">
@@ -303,9 +304,9 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 <p className="text-center pb-5 col-grey"> Our HR consultancy services empower businesses to optimize their workforce strategies, fostering a culture of growth and innovation. With tailored solutions, we address unique organizational needs, ensuring compliance and enhancing employee engagement. </p>
       </div>
      </div>
-      <div className="container d-flex flex-lg-row gap-4 flex-column justify-content-between">
+      <div className="container d-flex flex-lg-row gap-lg-4 flex-column justify-content-between">
         {/* Stat 1 */}
-        <div className="col-lg-3  col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-12 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats1}
@@ -322,7 +323,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
         </div>
 
         {/* Stat 2 */}
-        <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-12 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats2}
@@ -340,7 +341,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
           </div>
         </div>
         {/* Stat 3 */}
-        <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-12 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats3}
@@ -357,7 +358,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
           </div>
         </div>
         {/* Stat 4 */}
-        <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-12 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats4}
@@ -461,11 +462,14 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 {/* ANTD */}
  </div>
  <div className="col-lg-6">
-<img src="https://themewant.com/products/wordpress/bizgen/wp-content/uploads/2024/08/about-1.webp" className="img-fluid"  alt="" srcset="" />
+<img src={faqs} className="img-fluid"  alt="" srcset="" />
 </div> 
 
 </div>
 {/* FAQS */}
+{/* FOOTER */}
+<Footer/>
+{/* FOOTER */}
 
       </> 
   );
