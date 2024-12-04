@@ -28,7 +28,7 @@ if(window.scrollY > 500){
   navbar.classList.add("fixtop")
 
 navitem.forEach((e)=>{
-  console.log(e);
+
   e.classList.add("nav-items")
   })
 }
@@ -36,7 +36,7 @@ else{
   navbar.classList.remove("fixtop")
   navitem.forEach((e)=>{
     e.classList.remove("nav-items")
-    console.log(e);
+    
   
   })
 

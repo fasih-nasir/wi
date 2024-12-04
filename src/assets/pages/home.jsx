@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import "../../App.css";
 import 'animate.css';
 
@@ -7,8 +8,27 @@ import 'animate.css';
 import car1 from "../image/car1.png";
 import car2 from "../image/car2.png";
 import car3 from "../image/car3.png";
+import stats1 from "../image/stats1.jpg"
+import stats2 from "../image/stats2.jpg"
+import stats3 from "../image/stats3.jpg"
+import stats4 from "../image/stats4.jpg"
 
 export default function Home() {
+  var [stats,setstate]=useState("")
+  // STATS
+var num=0;
+
+useEffect(()=>{
+setInterval(() => {
+  num++
+
+  setstate(num)
+  
+}, 100)
+
+},[])
+  // STATS
+
   return (
  <>
  {/* HOME SECTION */}
@@ -37,7 +57,7 @@ export default function Home() {
             <button className="bookmarkBtn mt-4">
     <span className="IconContainer">
      
-      <i class="fa-solid fa-arrow-right icon"></i>
+      <i className="fa-solid fa-arrow-right icon"></i>
     </span>
     <Link className="text col-8 text-decoration-none" to={"/about"}>More-Info</Link>
     
@@ -64,7 +84,7 @@ export default function Home() {
             <button className="bookmarkBtn mt-4">
     <span className="IconContainer">
      
-      <i class="fa-solid fa-arrow-right icon"></i>
+      <i className="fa-solid fa-arrow-right icon"></i>
     </span>
     <Link className="text col-8 text-decoration-none" to={"/about"}>More-Info</Link>
     
@@ -92,7 +112,7 @@ export default function Home() {
             <button className="bookmarkBtn mt-4">
     <span className="IconContainer">
      
-      <i class="fa-solid fa-arrow-right icon"></i>
+      <i className="fa-solid fa-arrow-right icon"></i>
     </span>
     <Link className="text col-8 text-decoration-none" >More-Info</Link>
     
@@ -145,7 +165,7 @@ export default function Home() {
             <button className="bookmarkBtn bookmarkBtn1 mt-4">
     <span className="IconContainer">
      
-      <i class="fa-solid fa-arrow-right icon"></i>
+      <i className="fa-solid fa-arrow-right icon"></i>
     </span>
     <Link className="text text1 col-8 text-decoration-none" to={"/about"}>More-Info</Link>
     
@@ -167,10 +187,10 @@ export default function Home() {
   <div className="container-fluid">
     <div className="row p-5 d-flex flex-column justify-content-center align-items-center dhru">
       <div className=" text-center" id="serc1">
-        <p>OUR SERVICE AREA</p>
+        <p className="fw-normal">OUR SERVICE AREA</p>
       </div>
       <div className="text-center" id="serc1">
-        <h1>
+        <h1 className="fw-normal">
           Outsourced Hiring &amp; Job
           <br />
           Rules Services
@@ -187,8 +207,8 @@ export default function Home() {
           <div className="serj">
             <i className="fa fa-desktop" aria-hidden="true" id="ope" />
             <h4 id="ope">Executive Search and Selection</h4>
-            {/* <p class="text-center">WIGroups offers comprehensive <br>Executive Search and Selection</p> */}
-            <i className="fa fa-arrow-right" aria-hidden="true" />
+            {/* <p className"text-center">WIGroups offers comprehensive <br>Executive Search and Selection</p> */}
+            {/* <i className="fa fa-arrow-right" aria-hidden="true" /> */}
           </div>
         </div>
       </div>
@@ -202,9 +222,10 @@ export default function Home() {
             <i className="fa fa-user" aria-hidden="true" id="ope" />
             <h4 id="ope">
               Manpower
-              <br /> Outsourcing
+             Outsourcing
             </h4>
-            <i className="fa fa-arrow-right" aria-hidden="true" />
+            {/* <i className="fa fa-arrow-right" aria-hidden="true" /> */}
+         
           </div>
         </div>
       </div>
@@ -217,12 +238,12 @@ export default function Home() {
           <div className="serj">
             <i className="fa fa-comment uii" aria-hidden="true" id="ope" />
             <h4 id="ope">Executive Search and Selection</h4>
-            <i className="fa fa-arrow-right" aria-hidden="true" />
+            {/* <i className="fa fa-arrow-right" aria-hidden="true" /> */}
           </div>
         </div>
       </div>
     </div>
-    <div className="row" id="ur">
+    <div className="row dhru pb-5" id="ur">
       <div
         className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
         id="sercol"
@@ -232,8 +253,8 @@ export default function Home() {
           <div className="serj">
             <i className="fa-solid fa-image" aria-hidden="true" id="ope" />
             <h4 id="ope">HR / Payroll / etc. Outsourcing</h4>
-            {/* <p class="text-center">WIGroups offers comprehensive <br>Executive Search and Selection</p> */}
-            <i className="fa fa-arrow-right" aria-hidden="true" />
+            {/* <p className"text-center">WIGroups offers comprehensive <br>Executive Search and Selection</p> */}
+            {/* <i className="fa fa-arrow-right" aria-hidden="true" /> */}
           </div>
         </div>
       </div>
@@ -246,7 +267,7 @@ export default function Home() {
           <div className="serj">
             <i className="fa fa-th" aria-hidden="true" id="ope" />
             <h4 id="ope">Financial and Tax Consultancy</h4>
-            <i className="fa fa-arrow-right" aria-hidden="true" />
+            {/* <i className="fa fa-arrow-right" aria-hidden="true" /> */}
           </div>
         </div>
       </div>
@@ -259,14 +280,97 @@ export default function Home() {
           <div className="serj">
             <i className="fa fa-cog uii" aria-hidden="true" id="ope" />
             <h4 id="ope">Bulk Recruitment (Both National and International)</h4>
-            <i className="fa fa-arrow-right" aria-hidden="true" />
+            {/* <i className="fa fa-arrow-right" aria-hidden="true" /> */}
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+{/* SERVICE */}
+{/* STATS */}
+<div className="container py-2">
+     <div className="row d-flex justify-content-center align-items-center">
+      <div className="col-lg-9 ">
+<h1 className="text-center mb-4">
+Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with HR Expertise</h1>
+<p className="text-center pb-5 col-grey"> Our HR consultancy services empower businesses to optimize their workforce strategies, fostering a culture of growth and innovation. With tailored solutions, we address unique organizational needs, ensuring compliance and enhancing employee engagement. </p>
+      </div>
+     </div>
+      <div className="row text-center">
+        {/* Stat 1 */}
+        <div className="c col-md-3 col-sm-6 mb-4">
+          <div className="d-flex flex-row  card ">
+            <img
+              src={stats1}
+              className="col-lg-4 col-6"
+              alt="Satisfied Customers"
+            />
+            <div className="card-body d-flex flex-column justify-content-center align-items-start">
+            <h1 className="card-title fw-bold ft">{stats > 5000?5000: stats }<span className="col-org">+</span> </h1>
+             
+              <h6 className=" text-start col-grey">Satisfied <br /> Customers</h6>
+              
+            </div>
+          </div>
+        </div>
 
+        {/* Stat 2 */}
+        <div className="c col-md-3 col-sm-6 mb-4">
+          <div className="d-flex flex-row  card ">
+            <img
+              src={stats2}
+              className="col-lg-4 col-6"
+              alt="Satisfied Customers"
+            />
+            <div className="card-body d-flex flex-column justify-content-center align-items-start">
+            <h1 className="card-title fw-bold ft">{stats > 97?97: stats }<span className="col-org">%</span></h1>
+
+             
+              <h6 className="col-grey text-start">Job Placement Ratio
+              </h6>
+              
+            </div>
+          </div>
+        </div>
+        {/* Stat 3 */}
+        <div className="c col-md-3 col-sm-6 mb-4">
+          <div className="d-flex flex-row  card ">
+            <img
+              src={stats3}
+              className="col-lg-4 col-6"
+              alt="Satisfied Customers"
+            />
+            <div className="card-body d-flex flex-column justify-content-center align-items-start">
+            <h1 className="card-title fw-bold ft">{stats > 5000?5000: stats } </h1>
+
+             
+              <h6 className="col-grey text-start">Candicate Nationwide</h6>
+              
+            </div>
+          </div>
+        </div>
+        {/* Stat 4 */}
+        <div className="c col-md-3 col-sm-6 mb-4">
+          <div className="d-flex flex-row  card ">
+            <img
+              src={stats4}
+              className="col-lg-4 col-6"
+              alt="Satisfied Customers"
+            />
+            <div className="card-body d-flex flex-column text-start justify-content-center align-items-start">
+            <h1 className="card-title fw-bold text-start ft">{stats > 4340?4340: stats }<span className="col-org">+</span> </h1>
+
+             
+              <h6 className="col-grey text-start">Work <br /> Professional</h6>
+              
+            </div>
+          </div>
+        </div>
+        {/*  */}
+      </div>
+    </div>
+{/* STATS */}
       </> 
   );
 }
