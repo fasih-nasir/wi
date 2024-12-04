@@ -21,11 +21,25 @@ export default function Navbar() {
   // STICKE NAVBAR
   window.addEventListener("scroll",function(){
     var navbar=document.getElementById('navbar')
+    var navitem=document.querySelectorAll(".nav-item");
+
+    
 if(window.scrollY > 500){
   navbar.classList.add("fixtop")
+
+navitem.forEach((e)=>{
+  console.log(e);
+  e.classList.add("nav-items")
+  })
 }
 else{
   navbar.classList.remove("fixtop")
+  navitem.forEach((e)=>{
+    e.classList.remove("nav-items")
+    console.log(e);
+  
+  })
+
 }
 })
 
@@ -52,9 +66,9 @@ else{
         {/* TOP HEADER */}
 
     {/*NAVBAR  */}
-    <nav className="navbar navbar-expand-lg  px-3" id="navbar">
+    <nav className="navbar navbar-expand-lg px-3" id="navbar">
   <div className="container-fluid">
-    <a className="navbar-brand col-lg-2 col-4" href="#">
+    <a className="navbar-brand col-lg-2 col-6" href="#">
       <img src={logodark} className='col-12' alt="" />
     </a>
     <button
@@ -69,7 +83,7 @@ else{
       <span className="navbar-toggler-icon" />
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+    <ul className="navbar-nav mx-auto ">
       <li className="nav-item px-2">
         <Link
           to="/"
