@@ -160,7 +160,113 @@ export default function Home() {
   </div>
 </div>
  {/* ABOUT */}
-    
+ {/* SERVICE */}
+
+ {/* SERVICE */}
+ <div className="container-fluid" id="serv">
+  <div className="container-fluid">
+    <div className="row p-5 d-flex flex-column justify-content-center align-items-center dhru">
+      <div className=" text-center" id="serc1">
+        <p>OUR SERVICE AREA</p>
+      </div>
+      <div className="text-center" id="serc1">
+        <h1>
+          Outsourced Hiring &amp; Job
+          <br />
+          Rules Services
+        </h1>
+      </div>
+    </div>
+    <div className="row dhru" id="ur">
+      <div
+        className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        id="sercol"
+      >
+        <div className="sercoll">
+          <div className="seri" />
+          <div className="serj">
+            <i className="fa fa-desktop" aria-hidden="true" id="ope" />
+            <h4 id="ope">Executive Search and Selection</h4>
+            {/* <p class="text-center">WIGroups offers comprehensive <br>Executive Search and Selection</p> */}
+            <i className="fa fa-arrow-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        id="sercol"
+      >
+        <div className="sercoll">
+          <div className="seri" />
+          <div className="serj">
+            <i className="fa fa-user" aria-hidden="true" id="ope" />
+            <h4 id="ope">
+              Manpower
+              <br /> Outsourcing
+            </h4>
+            <i className="fa fa-arrow-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        id="sercol"
+      >
+        <div className="sercoll">
+          <div className="seri" />
+          <div className="serj">
+            <i className="fa fa-comment uii" aria-hidden="true" id="ope" />
+            <h4 id="ope">Executive Search and Selection</h4>
+            <i className="fa fa-arrow-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="row" id="ur">
+      <div
+        className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        id="sercol"
+      >
+        <div className="sercoll">
+          <div className="seri" />
+          <div className="serj">
+            <i className="fa-solid fa-image" aria-hidden="true" id="ope" />
+            <h4 id="ope">HR / Payroll / etc. Outsourcing</h4>
+            {/* <p class="text-center">WIGroups offers comprehensive <br>Executive Search and Selection</p> */}
+            <i className="fa fa-arrow-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        id="sercol"
+      >
+        <div className="sercoll">
+          <div className="seri" />
+          <div className="serj">
+            <i className="fa fa-th" aria-hidden="true" id="ope" />
+            <h4 id="ope">Financial and Tax Consultancy</h4>
+            <i className="fa fa-arrow-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
+        id="sercol"
+      >
+        <div className="sercoll">
+          <div className="seri" />
+          <div className="serj">
+            <i className="fa fa-cog uii" aria-hidden="true" id="ope" />
+            <h4 id="ope">Bulk Recruitment (Both National and International)</h4>
+            <i className="fa fa-arrow-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
       </> 
   );
 }
