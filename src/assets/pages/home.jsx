@@ -1,9 +1,12 @@
 import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+// FLES
 import "../../App.css";
 import 'animate.css';
-
+// FILES
+// ANTD
+import { Collapse } from "antd";
+// ANTD
 // Import Images
 import car1 from "../image/car1.png";
 import car2 from "../image/car2.png";
@@ -14,6 +17,9 @@ import stats3 from "../image/stats3.jpg"
 import stats4 from "../image/stats4.jpg"
 
 export default function Home() {
+  // ANTD
+
+  // ANTD
   var [stats,setstate]=useState("")
   // STATS
 var num=0;
@@ -24,7 +30,7 @@ setInterval(() => {
 
   setstate(num)
   
-}, 100)
+}, 50)
 
 },[])
   // STATS
@@ -183,8 +189,8 @@ setInterval(() => {
  {/* SERVICE */}
 
  {/* SERVICE */}
- <div className="container-fluid" id="serv">
-  <div className="container-fluid">
+ <div className="container-fluid m-0" id="serv">
+  <div className="container-fluid m-0 ">
     <div className="row p-5 d-flex flex-column justify-content-center align-items-center dhru">
       <div className=" text-center" id="serc1">
         <p className="fw-normal">OUR SERVICE AREA</p>
@@ -197,7 +203,7 @@ setInterval(() => {
         </h1>
       </div>
     </div>
-    <div className="row dhru" id="ur">
+    <div className="row dhru  px-4" id="ur">
       <div
         className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
         id="sercol"
@@ -243,7 +249,7 @@ setInterval(() => {
         </div>
       </div>
     </div>
-    <div className="row dhru pb-5" id="ur">
+    <div className="row dhru px-4 pb-5" id="ur">
       <div
         className="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12"
         id="sercol"
@@ -289,7 +295,7 @@ setInterval(() => {
 </div>
 {/* SERVICE */}
 {/* STATS */}
-<div className="container py-2">
+<div className="container m-0 px-4 py-2">
      <div className="row d-flex justify-content-center align-items-center">
       <div className="col-lg-9 ">
 <h1 className="text-center mb-4">
@@ -297,9 +303,9 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 <p className="text-center pb-5 col-grey"> Our HR consultancy services empower businesses to optimize their workforce strategies, fostering a culture of growth and innovation. With tailored solutions, we address unique organizational needs, ensuring compliance and enhancing employee engagement. </p>
       </div>
      </div>
-      <div className="row text-center">
+      <div className="container d-flex flex-lg-row gap-4 flex-column justify-content-between">
         {/* Stat 1 */}
-        <div className="c col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3  col-md-3 col-sm-6 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats1}
@@ -316,7 +322,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
         </div>
 
         {/* Stat 2 */}
-        <div className="c col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats2}
@@ -334,7 +340,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
           </div>
         </div>
         {/* Stat 3 */}
-        <div className="c col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats3}
@@ -351,7 +357,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
           </div>
         </div>
         {/* Stat 4 */}
-        <div className="c col-md-3 col-sm-6 mb-4">
+        <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
           <div className="d-flex flex-row  card ">
             <img
               src={stats4}
@@ -371,6 +377,96 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
       </div>
     </div>
 {/* STATS */}
+{/* FAQS */}
+<div className="container-fluid d-flex px-4 mt-5 pt-5 flex-lg-row flex-column justify-content-center align-items-center">
+ <div className="col-lg-6 px-2">
+  <p className="org col-lg-4 col-5 mx-lg-0 mx-auto px-3 py-1 rounded-4">Get Some Question</p>
+<h1> Together, we can elevate your team and business to their fullest potential.</h1>
+{/* ANTD */}
+<div className="accordion my-5 m-0 p-0" id="accordionPanelsStayOpenExample">
+  <div className="accordion-item m-0 p-0">
+    <h2 className="accordion-header">
+      <button
+        className="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapseOne"
+        aria-expanded="true"
+        aria-controls="panelsStayOpen-collapseOne"
+      >
+     What is the typical duration of a consulting engagement?
+      </button>
+    </h2>
+    <div
+      id="panelsStayOpen-collapseOne"
+      className="accordion-collapse collapse"
+    >
+      <div className="accordion-body">
+    <span className="col-grey">
+          The consultancy industry is constantly evolving, new trends, technologies, and methodologies emerging regularly. Staying ahead of these changes is crucial for a consultancy firms success.
+          </span>
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapseTwo"
+        aria-expanded="false"
+        aria-controls="panelsStayOpen-collapseTwo"
+      >
+        What types of businesses do you work with?
+      </button>
+    </h2>
+    <div
+      id="panelsStayOpen-collapseTwo"
+      className="accordion-collapse collapse"
+    >
+      <div className="accordion-body">
+     <span className="col-grey">
+     The consultancy industry is constantly evolving, new trends, technologies, and methodologies emerging regularly. Staying ahead of these changes is crucial for a consultancy firm’s success.
+     </span>
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapseThree"
+        aria-expanded="false"
+        aria-controls="panelsStayOpen-collapseThree"
+      >
+       How working process is simplified?
+      </button>
+    </h2>
+    <div
+      id="panelsStayOpen-collapseThree"
+      className="accordion-collapse collapse"
+    >
+      <div className="accordion-body">
+      <span className="col-grey">
+      The consultancy industry is constantly evolving, new trends, technologies, and methodologies emerging regularly. Staying ahead of these changes is crucial for a consultancy firm’s success.
+      </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* ANTD */}
+ </div>
+ <div className="col-lg-6">
+<img src="https://themewant.com/products/wordpress/bizgen/wp-content/uploads/2024/08/about-1.webp" className="img-fluid"  alt="" srcset="" />
+</div> 
+
+</div>
+{/* FAQS */}
+
       </> 
   );
 }

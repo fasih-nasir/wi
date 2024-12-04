@@ -339,3 +339,42 @@ position: absolute;
   }
 }
 /* STATS */
+/* FAQS */
+.panehead{
+  background-color: var(--color);
+}
+.panehead>p{
+  color: white !important;
+
+}
+.accordion-button{
+  outline: 1px solid white !important;
+  /* color: white !important; */
+  /* background-color: var(--color) !important; */
+}
+.accordion-header{
+
+  outline: none !important;
+  border: none !important;
+}
+/* Style for the accordion button when expanded */
+.accordion-button:not(.collapsed) {
+  background-color:var(--color) !important;  /* Dark background when expanded */
+  color: white !important;
+  letter-spacing: 0.3px;
+  outline: none !important;
+  border: none !important;
+  text-transform: capitalize;
+  /* White text when expanded */
+}
+
+/* Optional: style for the collapsed state if needed */
+.accordion-button.collapsed {
+  background-color: #ffffff;  /* Lighter background when collapsed */
+  color: #000;  /* Black text when collapsed */
+}
+.accordion-body{
+  margin: 4px 0px !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+}
+/* FAQS */
