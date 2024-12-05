@@ -8,9 +8,9 @@ import 'animate.css';
 import { Collapse } from "antd";
 // ANTD
 // Import Images
-import car1 from "../image/car1.png";
+import car1 from "../image/Untitled7.png";
 import car2 from "../image/car2.png";
-import car3 from "../image/car3.png";
+import car3 from "../image/Untitled6.png";
 import stats1 from "../image/stats1.jpg"
 import stats2 from "../image/stats2.jpg"
 import stats3 from "../image/stats3.jpg"
@@ -27,11 +27,11 @@ var num=0;
 
 useEffect(()=>{
 setInterval(() => {
-  num++
+  num+=5
 
   setstate(num)
   
-}, 50)
+}, 200)
 
 },[])
   // STATS
@@ -296,7 +296,7 @@ setInterval(() => {
 </div>
 {/* SERVICE */}
 {/* STATS */}
-<div className="container m-0 px-3 px-lg-4 py-2">
+<div className="container my-5 mt-5 pt-4 px-3 px-lg-4 py-2">
      <div className="row d-flex justify-content-center align-items-center">
       <div className="col-lg-9 ">
 <h1 className="text-center mb-4">

@@ -4,12 +4,42 @@ import '../../App.css'
 import React from 'react'
 import { useState,useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
+import { Button, Dropdown, Space } from 'antd'
+
 // 
 // IMAGES
 import logodark from "../image/logo-dark.png"
 // IMAGES
 
 export default function Navbar() {
+  // ANTD
+  // const items = [
+  //   {
+  //     key: '1',
+  //     label: (
+  //       <Link   className='text-decoration-none' rel="noopener noreferrer" href="https://www.antgroup.com">
+  //         HR Consulting
+  //       </Link>
+  //     ),
+  //   },
+  //   {
+  //     key: '2',
+  //     label: (
+  //       <Link  className='text-decoration-none text-capitalize' rel="noopener noreferrer" href="https://www.aliyun.com">
+  //         Improving Resource
+  //       </Link>
+  //     ),
+  //   },
+  //   {
+  //     key: '3',
+  //     label: (
+  //       <Link  className='text-decoration-none text-capitalize' rel="noopener noreferrer" href="https://www.aliyun.com">
+  //         Corporate program
+  //       </Link>
+  //     ),
+  //   },
+  // ];
+  // ANTD
   // ACTIVE
   const location = useLocation();
   const [activePath, setActivePath] = useState(location.pathname);
@@ -48,7 +78,7 @@ else{
   return (
     <div>
         {/* TOP HEADER */}
-<div className="container-fluid d-flex flex-row d-lg-flex d-none justify-content-center align-items-center tophead m-0 px-4 bg-white py-3">
+<div className="container-fluid d-flex flex-row d-lg-flex d-none justify-content-center align-items-center tophead m-0 px-4  py-3">
 
    <div className="col-6 d-flex  align-items-center">
    <i className="fa-solid span-head fa-location-dot pe-2"></i>
@@ -66,7 +96,7 @@ else{
         {/* TOP HEADER */}
 
     {/*NAVBAR  */}
-    <nav className="navbar navbar-expand-lg px-3" id="navbar">
+    <nav className="navbar navbar-expand-lg px-3 bg-white" id="navbar">
   <div className="container-fluid">
     <a className="navbar-brand col-lg-2 col-6" href="#">
       <img src={logodark} className='col-12' alt="" />
@@ -101,7 +131,16 @@ else{
           About
         </Link>
       </li>
-      <li className="nav-item px-2">
+      {/*  */}
+      {/* <Space direction="vertical">
+    <Space wrap>
+      <Dropdown
+        menu={{
+          items,
+        }}
+        placement="bottomLeft"
+      >
+     <li className="nav-item px-2">
         <Link
           to="/service"
           className={`nav-link ${activePath === "/service" ? "active" : ""}`}
@@ -109,6 +148,20 @@ else{
           Service
         </Link>
       </li>
+      </Dropdown>
+    
+    </Space>
+     </Space> */}
+   <li className="nav-item px-2">
+        <Link
+          to="/service"
+          className={`nav-link ${activePath === "/service" ? "active" : ""}`}
+        >
+          Service
+        </Link>
+      </li>
+     
+      {/*  */}
       <li className="nav-item px-2">
         <Link
           to="/contact"
