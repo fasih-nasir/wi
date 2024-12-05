@@ -388,3 +388,34 @@ position: absolute;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
 }
 /* FAQS */
+
+
+/* ABOUT PAGE */
+.about-page{
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  height: 80vh !important;
+  background-image: url("assets/image/abouthom.png");
+}
+.car-img-2{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  height: 85vh;
+  border-radius: 32px;
+  background-position: center;
+  object-fit: cover;
+  background-size: cover;
+  /* height: 60vh; */
+  background-image: url("assets/image/car2.png");
+}
+
+/* SERVICE-PAGE */
+.ser-page{
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  height: 80vh !important;
+  background-image: url("assets/image/car3.png");
+
+}
+/* SERVICE-PAGE */

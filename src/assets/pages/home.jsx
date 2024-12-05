@@ -468,7 +468,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 </div>
 {/* FAQS */}
 {/* FOOTER */}
-<Footer/>
+
 {/* FOOTER */}
 
       </> 
