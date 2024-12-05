@@ -202,7 +202,7 @@ border-top: 1px solid rgba(211, 211, 211, 0.289);
   background-image: url("assets/image/ab1.jpg");
 }
 .col-org{
-  color: var(--color);
+  color: var(--color) !important;
 }
 .col-grey{
   color: var(--color1);
@@ -424,6 +424,14 @@ position: absolute;
   background-image: url("assets/image/Untitled7.png");
 
 }
+.cont-page{
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  height: 80vh !important;
+  background-image: url("assets/image/Untitled8.png");
+
+}
 /* SERVICE-PAGE */
 
 .btn-warnin{
@@ -460,3 +468,24 @@ position: absolute;
 }
 
 /* SWIPER */
+
+input,textarea{
+  border: 1px solid rgba(211, 211, 211, 0.609);
+  text-transform: capitalize !important;
+border-radius: 7px;
+font-size: 15px !important;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+}
+input::placeholder{
+font-style: 10px !important;
+
+  color: var(--color1) !important;
+
+}
+.org1{
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+  background-color: rgb(255, 254, 254);
+}
+a>i{
+  font-size: 24px;
+}
