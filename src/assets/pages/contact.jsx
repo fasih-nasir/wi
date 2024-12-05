@@ -2,7 +2,33 @@ import React from 'react'
 import '../../App.css'
 import { useState } from 'react';
 import { Button, message } from 'antd';
+// FIREBASE
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+// import { getFirestore } from "firebase/firestore";
+import { getFirestore,collection, addDoc} from "firebase/firestore"; 
+// import { db } from "./firebaseConfig";
+// FIREBASE
+
 export default function Contact() {
+  // FIREBASE
+  // Import the functions you need from the SDKs you need
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAT4O_2PErTh_f7EAttbx5TI4kWtPShC6s",
+  authDomain: "wihr-consultant.firebaseapp.com",
+  projectId: "wihr-consultant",
+  storageBucket: "wihr-consultant.firebasestorage.app",
+  messagingSenderId: "92117150651",
+  appId: "1:92117150651:web:54f7b70d1cc373f556f29e",
+  measurementId: "G-HN017L14LW"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app)
+  // FIREBASE
   // msg
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
@@ -10,7 +36,7 @@ export default function Contact() {
       // className:"",
       type: 'success',
       content: 'Your message has been successfully forwarded to the admin. Thank you for reaching out!',
-      duration: 100,
+      duration: 5,
   //  top:50,
     });
   };
@@ -19,28 +45,40 @@ export default function Contact() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setResult("Sending...");
+  
     const formData = new FormData(event.target);
-
-    formData.append("access_key", "d92bdf8f-5c6e-41f8-8b11-8b305e40cbf1");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-      success()
-    } else {
-      // console.log("Error", data);
-      setResult(data.message);
+    const formObject = Object.fromEntries(formData.entries());
+  
+    try {
+      // Add data to Firestore collection "contact-us"
+      const docRef = await addDoc(collection(db, "contact-us"), formObject);
+   
+  
+      // Send email using Web3Forms
+      formData.append("access_key", "d92bdf8f-5c6e-41f8-8b11-8b305e40cbf1");  // Replace with your key
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form submitted successfully!");
+        event.target.reset(); // Reset the form
+        success()
+      } else {
+        setResult("Failed to send email. Please try again.");
+      }
+  
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Failed to submit form. Please try again.");
     }
   };
-
+  
   // contact form
   return (
     <div>
@@ -197,6 +235,17 @@ export default function Contact() {
 
             placeholder="Your Phone Number"
           />
+           <input
+            type="hidden"
+            className=" p-3 col-11"
+            id="training"
+            name='Time'
+            value={new Date()}
+            placeholder="Date"
+          />
+        </div>
+        <div className="mb-3 col-12">
+     
       
         </div>
         {/* Message */}
