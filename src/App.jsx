@@ -12,6 +12,9 @@ import Contact from './assets/pages/contact'
 import Navbar from './assets/pages/navbar'
 import Footer from './assets/pages/footer';
 import Service from './assets/pages/service';
+import job from "./assets/pages/postjob"
+import Job from './assets/pages/postjob';
+import PostJob from './assets/pages/postjob';
 // PAGES
 
 function App() {
@@ -27,6 +30,8 @@ function App() {
     <Route path='/about' element={<About />}/>
     <Route path='/contact' element={<Contact />}/>
     <Route path='/service' element={<Service />}/>
+    <Route path='/postjob' element={<PostJob />}/>
+
 
   </Route>
 </Routes>

@@ -3,7 +3,7 @@
 :root{
     /* --color:#E4871D; */
     --color:#f39224;
-
+--font-family: "Outfit", sans-serif;
     --color1: #797979;
 }
 .card-title{
@@ -499,7 +499,30 @@ a>i{
 input:focus{
 
   outline:  none !important;
-background-color: #f2f2f268;
+/* background-color: #6c0e0e; */
   transition: 0.9s ease-in-out;
   border-bottom: 1.2px solid var(--color) !important;
 }
+/* postjobbg */
+.postjobbg{
+  height: 300px;
+  background-color: var(--color);
+}
+label{
+  font-family: var(--font-family) !important;
+  
+}
+Input,TextArea{
+  font-family: var(--font-family) !important;
+padding: 10px 10px !important;
+}
+Input::placeholder{
+  color: var(--color1) !important;
+}
+.form{
+  font-family: var(--font) !important;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  padding:35px;
+  background-color: rgb(249, 249, 249);
+}
+/* postjobbg */

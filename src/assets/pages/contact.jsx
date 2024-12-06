@@ -5,7 +5,7 @@ import { Button, message } from 'antd';
 // FIREBASE
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// import { getFirestore } from "firebase/firestore";
+
 import { getFirestore,collection, addDoc} from "firebase/firestore"; 
 // import { db } from "./firebaseConfig";
 // FIREBASE
