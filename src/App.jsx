@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+// import { useLocation } from 'react-router-dom';
 import './App.css'
 // BOOTSTRAP 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -12,33 +13,38 @@ import Contact from './assets/pages/contact'
 import Navbar from './assets/pages/navbar'
 import Footer from './assets/pages/footer';
 import Service from './assets/pages/service';
-import job from "./assets/pages/postjob"
-import Job from './assets/pages/postjob';
+// import job from "./assets/pages/postjob"
+import Jobs from './assets/pages/jobs';
 import PostJob from './assets/pages/postjob';
+import Login from './assets/pages/login';
 // PAGES
 
 function App() {
-
+  const currentURL = window.location.href; 
 
   return (
     <>
-<BrowserRouter>
-  <Navbar/>
-<Routes>
-  <Route>
-    <Route path='/' element={<Home />}/>
-    <Route path='/about' element={<About />}/>
-    <Route path='/contact' element={<Contact />}/>
-    <Route path='/service' element={<Service />}/>
-    <Route path='/postjob' element={<PostJob />}/>
+    <BrowserRouter>
+{currentURL.includes("login")?"":<Navbar/>}
+      
+      <Routes>
+        <Route>
+          <Route path='/' element={<Home />}/>
+          <Route path='/about' element={<About />}/>
+          <Route path='/contact' element={<Contact />}/>
+          <Route path='/service' element={<Service />}/>
+          <Route path='/postjob' element={<PostJob />}/>
+          <Route path='/job' element={<Jobs />}/>
+
+          <Route path='/login' element={<Login />}/>
+        </Route>
+      </Routes>
+{currentURL.includes("login")?"": <Footer/>}
 
 
-  </Route>
-</Routes>
-<Footer/>
-  </BrowserRouter>
+    </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

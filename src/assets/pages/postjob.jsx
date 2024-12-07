@@ -1,17 +1,21 @@
 import  { useState } from "react";
 import {  message,Form, Input ,Select, Button } from "antd";
 
-
+import {  onAuthStateChanged ,signOut} from "firebase/auth";
 const { Option } = Select;
 const {TextArea}=Input;
 // FIREBASE
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { useNavigate } from 'react-router';
 
 import { getFirestore,collection, addDoc} from "firebase/firestore"; 
 // import { db } from "./firebaseConfig";
 // FIREBASE
 const PostJob = () => {
+
+// LOGOUT
+// LOGUT
   const [messageApi, contextHolder] = message.useMessage();
   const [form] = Form.useForm();
   const success = () => {
@@ -40,7 +44,32 @@ const PostJob = () => {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const db = getFirestore(app)
-    // FIREBASE
+
+  // not sign
+  var nav=useNavigate()
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log(user);
+ 
+    const uid = user.uid;
+    // ...
+  } else {
+nav("/login") 
+    // User is signed out
+    // ...
+  }
+});
+  // not sign
+// LOGUT
+const log=()=>{
+  signOut(auth).then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+}
+// LOGUT
+// FIREBASE
     // msg
     // console.log(new Date().getMinutes()) ;
     
@@ -78,6 +107,7 @@ const PostJob = () => {
     <div className="container-fluid d-flex flex-column postjobbg d-flex justify-content-center align-items-center">
 <h1 className="text-white fw-normal">POST A JOB </h1>
 <p className="text-white fw-normal text-capitalize">Note Just only admin can post a job or delete a job </p>
+   <button onClick={log}>LogOut</button>
     </div>
      <div className="col-lg-6  mx-auto py-5">
    

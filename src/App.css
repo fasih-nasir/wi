@@ -525,4 +525,10 @@ Input::placeholder{
   padding:35px;
   background-color: rgb(249, 249, 249);
 }
+.bfg{
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+
+  background-color: rgb(249, 249, 249) !important;
+
+}
 /* postjobbg */
