@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import 'animate.css';
+
 // FLES
 import "../../App.css";
 import 'animate.css';
@@ -35,19 +37,45 @@ setInterval(() => {
 
 },[])
   // STATS
+  const [loader,setloader]=useState(true)
+
+// LOADER
+useEffect(()=>{
+  var load=document.getElementById("loader")
+const timer= setTimeout(() => {
+load.classList.add("ad")
+  setloader(false)
+
+}, 4000);
+return()=> {
+
+    clearTimeout(timer)
+  }
+},[])
+// LOADER
 
   return (
  <>
+ {/* LOADER */}
+  {loader?(
+ 
+<div className="container-fluid z-3 d-flex justify-content-center align-items-center" id="loader">
+<div className="loader col-1" ></div>
+</div>
+):(
+<div>
+{/* LOADER */}
+
  {/* HOME SECTION */}
       <div
 
         id="carouselExampleFade"
-        className="container-fluid m-0 p-0 carousel slide carousel-fade"
+        className="animate__fadeIn container-fluid m-0 p-0 carousel slide carousel-fade"
         data-bs-ride="carousel"
       data-bs-interval="3500" // This will change the image every 2 seconds
       >
         <div className="carousel-inner m-0 ">
-          <div className="carousel-item active d-flex flex-column justify-content-center align-items-center">
+          <div className="carousel-item animate__fadeIn active d-flex flex-column justify-content-center align-items-center">
             <img
               className="d-block w-100 h-100 position-relative"
               src={car2}
@@ -73,7 +101,7 @@ setInterval(() => {
   {/*  */}
           </div>
           </div>
-          <div className=" carousel-item d-flex justify-content-center align-items-center">
+          <div className=" carousel-item animate__fadeIn d-flex justify-content-center align-items-center">
             <img
               className="d-block w-100 position-relative"
               src={car1}
@@ -102,7 +130,7 @@ setInterval(() => {
             </div>
          
           </div>
-          <div className="carousel-item d-flex justify-content-center align-items-center">
+          <div className="carousel-item animate__fadeIn d-flex justify-content-center align-items-center">
             <img
               className="d-block w-100 position-relative"
               src={car3}
@@ -470,7 +498,8 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 {/* FOOTER */}
 
 {/* FOOTER */}
-
+</div>
+)}
       </> 
   );
 }

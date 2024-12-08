@@ -1,10 +1,12 @@
 // 
 import '../../App.css'
+import 'animate.css';
+
 // 
 import React from 'react'
 import { useState,useEffect } from 'react';
 import { Link, useLocation,useNavigate } from "react-router-dom";
-import { Button, Dropdown, Space } from 'antd'
+import { Button, Dropdown, Space } from 'antd' 
 
 // 
 // IMAGES
@@ -85,7 +87,7 @@ else{
 ):(
     <div>
         {/* TOP HEADER */}
-<div className="container-fluid d-flex flex-row d-lg-flex d-none justify-content-center align-items-center tophead m-0 px-4  py-3">
+<div className="animate__fadeIn container-fluid d-flex flex-row d-lg-flex d-none justify-content-center align-items-center tophead m-0 px-4  py-3">
 
    <div className="col-6 d-flex  align-items-center">
    <i className="fa-solid span-head fa-location-dot pe-2"></i>
