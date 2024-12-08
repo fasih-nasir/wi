@@ -1,9 +1,9 @@
 import  { useState } from "react";
 import {  message,Form, Input ,Select, Button } from "antd";
-
-import {  onAuthStateChanged ,signOut} from "firebase/auth";
 const { Option } = Select;
 const {TextArea}=Input;
+
+import {  onAuthStateChanged ,signOut} from "firebase/auth";
 // FIREBASE
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -73,8 +73,9 @@ const log=()=>{
     // msg
     // console.log(new Date().getMinutes()) ;
     
-    var a=[new Date().getFullYear() , new Date().getDate(),new Date().getMonth()]
+    var a=[new Date().getFullYear() , new Date().getDate(),new Date().getMonth()+1]
 
+   
     
     const onFinish =async (values) => {
      
