@@ -49,7 +49,7 @@ const PostJob = () => {
   var nav=useNavigate()
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log(user);
+    // console.log(user);
  
     const uid = user.uid;
     // ...
@@ -78,7 +78,7 @@ const log=()=>{
     
     const onFinish =async (values) => {
      
-      console.log("Form Values:", values);
+      // console.log("Form Values:", values);
     try{
       const dataToSubmit = {
         ...values,

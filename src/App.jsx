@@ -20,13 +20,13 @@ import Login from './assets/pages/login';
 // PAGES
 
 function App() {
-  const currentURL = window.location.href; 
+  // const currentURL = window.location.href; 
 
   return (
     <>
     <BrowserRouter>
-{currentURL.includes("login")?"":<Navbar/>}
-      
+{/* {currentURL.includes("login")?"":<Navbar/>} */}
+<Navbar/>
       <Routes>
         <Route>
           <Route path='/' element={<Home />}/>
@@ -39,7 +39,8 @@ function App() {
           <Route path='/login' element={<Login />}/>
         </Route>
       </Routes>
-{currentURL.includes("login")?"": <Footer/>}
+      <Footer/>
+{/* {currentURL.includes("login")?"": <Footer/>} */}
 
 
     </BrowserRouter>

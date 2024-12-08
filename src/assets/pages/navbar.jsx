@@ -3,7 +3,7 @@ import '../../App.css'
 // 
 import React from 'react'
 import { useState,useEffect } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation,useNavigate } from "react-router-dom";
 import { Button, Dropdown, Space } from 'antd'
 
 // 
@@ -12,6 +12,7 @@ import logodark from "../image/logo-dark.png"
 // IMAGES
 
 export default function Navbar() {
+
   // ANTD
   // const items = [
   //   {
@@ -45,9 +46,11 @@ export default function Navbar() {
   const [activePath, setActivePath] = useState(location.pathname);
 
   useEffect(() => {
+    
     setActivePath(location.pathname); // Update active path on location change
   }, [location]);
   // ACTIVE
+
   // STICKE NAVBAR
   window.addEventListener("scroll",function(){
     var navbar=document.getElementById('navbar')
@@ -76,6 +79,10 @@ else{
 
   // STICKY NAVBAR
   return (
+    <>
+{activePath === "/login"?(
+  <div></div>
+):(
     <div>
         {/* TOP HEADER */}
 <div className="container-fluid d-flex flex-row d-lg-flex d-none justify-content-center align-items-center tophead m-0 px-4  py-3">
@@ -200,5 +207,7 @@ else{
 
 
     </div>
+  )}
+  </>
   )
 }

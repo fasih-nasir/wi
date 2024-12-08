@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logodark from "../image/logo-light.png"
-
+import { useLocation } from 'react-router';
 const Footer = () => {
+  const location = useLocation();
+  const [activePath, setActivePath] = useState(location.pathname);
+
+  useEffect(() => {
+    
+    setActivePath(location.pathname); // Update active path on location change
+  }, [location]);
   return (
+    <>
+
+{activePath ==="/login" ?(
+  <div></div>
+):(
+
     <footer className="bg-dark text-light py-4">
       <div className="container-fluid px-4">
         {/* Logo and Copyright */}
@@ -42,6 +56,8 @@ const Footer = () => {
  
       </div>
     </footer>
+   )}
+   </>
   );
 }
 
