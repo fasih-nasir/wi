@@ -48,7 +48,7 @@ export default function Navbar() {
   const [activePath, setActivePath] = useState(location.pathname);
 
   useEffect(() => {
-    
+   
     setActivePath(location.pathname); // Update active path on location change
   }, [location]);
   // ACTIVE
@@ -128,6 +128,7 @@ else{
           to="/"
           className={`nav-link ${activePath === "/" ? "active" : ""}`}
           aria-current="page"
+          
         >
           Home
         </Link>
@@ -136,6 +137,13 @@ else{
         <Link
           to="/about"
           className={`nav-link ${activePath === "/about" ? "active" : ""}`}
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
         >
           About
         </Link>
@@ -165,7 +173,14 @@ else{
         <Link
           to="/service"
           className={`nav-link ${activePath === "/service" ? "active" : ""}`}
-        >
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+       >
           Service
         </Link>
       </li>
@@ -175,7 +190,14 @@ else{
         <Link
           to="/contact"
           className={`nav-link ${activePath === "/contact" ? "active" : ""}`}
-        >
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+       >
           Contact
         </Link>
       </li>
@@ -183,7 +205,14 @@ else{
         <Link
           to="/job"
           className={`nav-link ${activePath === "/job" ? "active" : ""}`}
-        >
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+       >
           Jobs
         </Link>
       </li>

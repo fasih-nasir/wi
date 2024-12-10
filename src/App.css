@@ -7,6 +7,13 @@
   --font-family: "Outfit", sans-serif;
   --color1: #797979;
 }
+html {
+  scroll-behavior: smooth !important;
+}
+body{
+  scroll-behavior: smooth !important;
+}
+
 /* loader */
 #loader{
   z-index: 1115000 !important;

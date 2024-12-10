@@ -136,13 +136,13 @@ const onFinish =async (values) => {
         </Form.Item>
 
   </div>
-  <div className="col-3">
+  {/* <div className="col-3">
   <Form.Item className="col-3 mx-auto fw-bolder text-uppercase">
           <Button  className="col-2 mx-auto org text-white" htmlType="submit" block>
             Post Job
           </Button>
         </Form.Item>
-  </div>
+  </div> */}
 </Form>
 </div>
    {/* filter */}
