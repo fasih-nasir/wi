@@ -125,7 +125,7 @@ const log=()=>{
 <Form.Item
 
 label="Job Description"
-name="Job-Description"
+name="desc"
     rules={[{ required: true, message: "Please enter the job Desc!" }]}
 ><TextArea
         placeholder="Controlled autosize"
@@ -140,7 +140,7 @@ name="Job-Description"
 <Form.Item
 
 label="Job Benefit"
-name="Job-Benefit"
+name="benefit"
     rules={[{ required: true, message: "Please enter the job Benefit!" }]}
 ><TextArea
         placeholder="Benefit"
@@ -153,26 +153,28 @@ name="Job-Benefit"
 <Form.Item
 
 label="Job Skill"
-name="Job-Skill"
+name="skill"
     rules={[{ required: true, message: "Please enter the job Skill" }]}
 ><TextArea
         placeholder="Skill"
         
         autoSize={{ minRows: 2, maxRows: 5 }}
       />
+
 </Form.Item>
 {/* JOBS SKILLS */}
 {/* RESPONSIBLITY */}
 <Form.Item
 
 label="Job Responsiblity"
-name="Job-Responsiblity"
+name="res"
     rules={[{ required: true, message: "Please enter the Job-Responsiblity!" }]}
 ><TextArea
         placeholder="Job-Responsiblity"
         
         autoSize={{ minRows: 3, maxRows: 5 }}
       />
+
 </Form.Item>
 
 {/* RESPONSIBLITY */}
@@ -180,13 +182,14 @@ name="Job-Responsiblity"
 <Form.Item
 
 label="Job Qualifications"
-name="Job-Qualifications"
+name="qua"
     rules={[{ required: true, message: "Please enter the Qualifications!" }]}
 ><TextArea
         placeholder="Job-Qualifications"
         
         autoSize={{ minRows: 3, maxRows: 5 }}
       />
+
 </Form.Item>
 {/* Qualification */}
 
@@ -195,7 +198,7 @@ name="Job-Qualifications"
         {/* Job Type */}
         <Form.Item
           label="Job Type"
-          name="jobType"
+          name="type"
           rules={[{ required: true, message: "Please select the job type!" }]}
         >
           <Select placeholder="Select job type">
@@ -203,6 +206,7 @@ name="Job-Qualifications"
             <Option value="hybrid">Hybrid</Option>
             <Option value="onsite">Onsite</Option>
           </Select>
+       
         </Form.Item>
 
         {/* Job Region */}
@@ -212,6 +216,8 @@ name="Job-Qualifications"
           rules={[{ required: true, message: "Please select the job region!" }]}
         >
          <Select placeholder="Select job region">
+         <Option value="inter">Internatinol</Option>
+
     <Option value="karachi">Karachi</Option>
     <Option value="lahore">Lahore</Option>
     <Option value="islamabad">Islamabad</Option>
@@ -240,7 +246,7 @@ name="Job-Qualifications"
 {/* JOB CATEOGERY */}
 <Form.Item
   label="Job Category"
-  name="jobCategory"
+  name="cat"
   rules={[{ required: true, message: "Please select the job category!" }]}
 >
   <Select placeholder="Select job category">
@@ -250,6 +256,8 @@ name="Job-Qualifications"
     <Option value="Banking">Banking</Option>
     <Option value="Education">Education</Option>
     <Option value="Construction">Construction</Option>
+    <Option value="marketing">marketing</Option>
+    
     <Option value="Engineering">Engineering</Option>
     <Option value="Healthcare">Healthcare</Option>
     <Option value="Finance">Finance</Option>
@@ -285,12 +293,19 @@ name="Job-Qualifications"
           rules={[{ required: true, message: "Please select experience!" }]}
         >
           <Select placeholder="Select experience">
+          <Option value="6months">Fresh</Option>
+
             <Option value="6months">6 Months</Option>
             <Option value="1year">1 Year</Option>
             <Option value="2years">2 Years</Option>
             <Option value="3years">3 Years</Option>
             <Option value="4years">4 Years</Option>
             <Option value="5years">5 Years</Option>
+            <Option value="6years">6 Years</Option>
+<Option value="7years">7 Years</Option>
+<Option value="8years">8 Years</Option>
+<Option value="9years">9 Years</Option>
+<Option value="10years">10 Years</Option>
           </Select>
         </Form.Item>
 

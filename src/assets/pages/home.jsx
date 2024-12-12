@@ -46,7 +46,7 @@ const timer= setTimeout(() => {
 load.classList.add("ad")
   setloader(false)
 
-}, 2000);
+}, 3000);
 return()=> {
 
     clearTimeout(timer)

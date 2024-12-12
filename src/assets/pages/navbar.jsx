@@ -110,17 +110,15 @@ else{
     <a className="navbar-brand col-lg-2 col-6" href="#">
       <img src={logodark} className='col-12' alt="" />
     </a>
-    <button
-      className="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span className="navbar-toggler-icon" />
-    </button>
+    <button className=" navbar-toggler"
+     type="button"
+      data-bs-toggle="offcanvas" 
+      data-bs-target="#offcanvasRight"
+       aria-controls="offcanvasRight"
+       >
+        <i className="fa-solid fa-bars"></i>
+       </button>
+
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mx-auto ">
       <li className="nav-item px-2">
@@ -235,7 +233,115 @@ else{
 
     {/* NAVBAR */}
 
-
+{/* offcanvas */}
+<div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div className="offcanvas-header">
+    <h5 id="offcanvasRightLabel" className='col-7'>
+    <a className="navbar-brand col-lg-2 col-6" href="#">
+      <img src={logodark} className='col-12' alt="" />
+    </a>
+    </h5>
+    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div className="offcanvas-body d-flex justify-content-center align-items-center">
+  <ul className="navbar-nav mx-auto ">
+      <li className="nav-item px-2">
+        <Link
+          to="/"
+          className={`nav-link ${activePath === "/" ? "active" : ""}`}
+          aria-current="page"
+          
+        >
+          Home
+        </Link>
+      </li>
+      <li className="nav-item px-2">
+        <Link
+          to="/about"
+          className={`nav-link ${activePath === "/about" ? "active" : ""}`}
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+        >
+          About
+        </Link>
+      </li>
+      {/*  */}
+      {/* <Space direction="vertical">
+    <Space wrap>
+      <Dropdown
+        menu={{
+          items,
+        }}
+        placement="bottomLeft"
+      >
+     <li className="nav-item px-2">
+        <Link
+          to="/service"
+          className={`nav-link ${activePath === "/service" ? "active" : ""}`}
+        >
+          Service
+        </Link>
+      </li>
+      </Dropdown>
+    
+    </Space>
+     </Space> */}
+   <li className="nav-item px-2">
+        <Link
+          to="/service"
+          className={`nav-link ${activePath === "/service" ? "active" : ""}`}
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+       >
+          Service
+        </Link>
+      </li>
+     
+      {/*  */}
+      <li className="nav-item px-2">
+        <Link
+          to="/contact"
+          className={`nav-link ${activePath === "/contact" ? "active" : ""}`}
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+       >
+          Contact
+        </Link>
+      </li>
+      <li className="nav-item px-2">
+        <Link
+          to="/job"
+          className={`nav-link ${activePath === "/job" ? "active" : ""}`}
+          onClick={() =>
+            useEffect(()=>{
+              setTimeout(() => {
+                window.location.reload()
+              },1000);
+            },[])
+          }
+       >
+          Jobs
+        </Link>
+      </li>
+    </ul>
+  </div>
+</div>
+{/* off canvas */}
 
     </div>
   )}

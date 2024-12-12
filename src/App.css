@@ -704,3 +704,9 @@ Input::placeholder {
 .jobcard {
   border: 9px solid white;
 }
+.jobcont{
+  background-image: url("assets/image/jobbanner.png");
+  height: 60vh ;
+  object-fit: cover;
+  background-size: cover;
+}
