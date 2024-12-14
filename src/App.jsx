@@ -17,6 +17,7 @@ import Service from './assets/pages/service';
 import Jobs from './assets/pages/jobs';
 import PostJob from './assets/pages/postjob';
 import Login from './assets/pages/login';
+import Jobdetail from './assets/pages/jobdetail';
 // PAGES
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
           <Route path='/service' element={<Service />}/>
           <Route path='/postjob' element={<PostJob />}/>
           <Route path='/job' element={<Jobs />}/>
-
+          <Route path="/job-detail/:jobId" element={<Jobdetail/>} />
           <Route path='/login' element={<Login />}/>
         </Route>
       </Routes>

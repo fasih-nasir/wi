@@ -34,7 +34,8 @@ export default function Jobs() {
         const querySnapshot = await getDocs(collection(db, "jobs"));
         const jobsArray = [];
         querySnapshot.forEach((doc) => {
-          jobsArray.push(doc.data());
+          // console.log(doc.id)
+          jobsArray.push(doc);
         });
         setData(jobsArray);
         setFilteredData(jobsArray)
@@ -179,12 +180,17 @@ console.log(data);
           <div className="bg-white shadow px-2 py-1 rounded-5">
             <i className="fa-solid fa-briefcase"></i>
           </div>
-          <h4 className="pt-2 px-2">{job.jobTitle}</h4>
+          <h4 className="pt-2 px-2">{job.data().jobTitle}</h4>
         </div>
-        <p>{job.desc}</p>
-        <p>Experience: {job.experience}</p>
+        <p>{job.data().desc}</p>
+        <p>Experience: {job.data().experience}</p>
         <p>Job Type: {job.type}</p>
-        <p>Job Category: {job.cat}</p>
+        <p>Job Category: {job.data().cat}</p>
+    
+        <Link to={`/job-detail/${job.id}`} target="_blank" >
+        More-Info
+        </Link>
+        {/* <button  >MORE-INFO</button> */}
       </div>
     </div>
   ))
