@@ -154,6 +154,7 @@ nav {
   background-color: rgb(255, 255, 255) !important;
   position: fixed !important;
   top: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   padding: 0px;
   z-index: 1111 !important;
 }
@@ -706,7 +707,48 @@ Input::placeholder {
 }
 .jobcont{
   background-image: url("assets/image/jobbanner.png");
-  height: 60vh ;
+  height:90vh ;
   object-fit: cover;
   background-size: cover;
 }
+.jbdi{
+  border-radius:10px;
+}
+.ino{
+  color: #000 !important;
+  border: none !important;
+}
+.custom-select {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+ /* Custom width */
+  /* border: 1px solid #eeeeee; */
+  /* border-radius: 150px !important; */
+  /* border: 2px solid #4caf50 !important; Custom border color */
+  border-radius:28px !important; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  color:black !important; /* Text color */
+}
+
+.custom-select .ant-select-selector {
+  /* border-color: #4caf50 !important; Apply border color to the selector */
+  height: 45px; /* Adjust height */
+  display: flex;
+  align-items: center;
+}
+
+.custom-select .ant-select-arrow 
+{
+  color:black !important;
+  padding:6px;
+  font-size:9px;
+  border-radius: 60px;
+  /* background-color: var(--color); */
+}
+.custom-select .ant-select-selection-placeholder {
+  /* color:var(--color) !important; Custom placeholder color */
+color: rgb(72, 72, 72) !important;
+text-transform: capitalize;
+font-weight:300;
+font-family: var(--font-family) !important;
+}
+

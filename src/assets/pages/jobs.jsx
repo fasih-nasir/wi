@@ -19,11 +19,6 @@ export default function Jobs() {
 
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  // const [filters, setFilters] = useState({
-  //   jobCategory: null,
-  //   experience: null,
-  //   jobType: null,
-  // });
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
@@ -51,16 +46,16 @@ export default function Jobs() {
 
 
     if (value === "All" ){
-console.log(data);
 
       setFilteredData(data)
       return
     };
     const filtered = data.filter((e) => {
+    // console.log(e.data());
     
-      if (field === "cat" && e.cat === value) return true;
-      if (field === "experience" && e.experience === value) return true;
-      if (field === "type" && e.type === value) return true;
+      if (field === "cat" && e.data().cat === value) return true;
+      if (field === "jobRegion" && e.data().jobRegion === value) return true;
+      if (field === "type" && e.data().type === value) return true;
       return false;
     });
   
@@ -71,84 +66,152 @@ console.log(data);
   return (
     <>
    <div className="container-fluid jobcont d-flex flex-column  justify-content-center align-items-center">
-  <h1 className="text-white">Available Jobs</h1>
+  <h1 className="text-white text-capitalize display-4 fw-medium text-center ">get the right job <br />you deserve </h1>
    <div className="container-fluid px-5 d-flex  py-4 justify-content-center align-items-center">
-        <div className="d-flex flex-row col-12 gap-3 justify-content-around" style={{ fontFamily: "Outfit" }}>
+        <div className="d-flex flex-lg-row flex-column col-12 p-4  gap-3 bg-white  justify-content-around jbdi  " style={{ fontFamily: "Outfit" }}>
           {/* Job Category */}
-          <div className="col-4">
+          <div className="col-lg-4 col-12  ">
             <Select
               placeholder="Select job category"
-              className="w-100 "
+              className="custom-select col-11"
+
               onChange={(value) => handleFilterChange(value, "cat")}
             >
-           <Option value="All">All</Option>
+           <Option value="All"  >All</Option>
 
-           <Option value="Medical">Medical</Option>
-    <Option value="Corporate">Corporate</Option>
-    <Option value="IT">IT</Option>
-    <Option value="Banking">Banking</Option>
-    <Option value="Education">Education</Option>
-    <Option value="Construction">Construction</Option>
-    <Option value="marketing">marketing</Option>
-    
-    <Option value="Engineering">Engineering</Option>
-    <Option value="Healthcare">Healthcare</Option>
-    <Option value="Finance">Finance</Option>
-    <Option value="Hospitality">Hospitality</Option>
-    <Option value="Legal">Legal</Option>
-    <Option value="Marketing">Marketing</Option>
-    <Option value="Sales">Sales</Option>
-    <Option value="Transportation">Transportation</Option>
-    <Option value="Telecommunication">Telecommunication</Option>
-    <Option value="Retail">Retail</Option>
-    <Option value="Agriculture">Agriculture</Option>
-    <Option value="Aerospace">Aerospace</Option>
-    <Option value="Energy">Energy</Option>
-    <Option value="Real Estate">Real Estate</Option>
-    <Option value="Manufacturing">Manufacturing</Option>
-    <Option value="Automotive">Automotive</Option>
-    <Option value="Insurance">Insurance</Option>
-    <Option value="Entertainment">Entertainment</Option>
-    <Option value="Media">Media</Option>
-    <Option value="Public Services">Public Services</Option>
-    <Option value="Technology">Technology</Option>
-    <Option value="E-commerce">E-commerce</Option>
-    <Option value="Pharmaceutical">Pharmaceutical</Option>
-    <Option value="Consulting">Consulting</Option>
-        
+           <Option value="Web Development">Web Development</Option>
+  <Option value="App Development">App Development</Option>
+  <Option value="Software Development">Software Development</Option>
+  <Option value="Data Science">Data Science</Option>
+  <Option value="Machine Learning">Machine Learning</Option>
+  <Option value="Artificial Intelligence">Artificial Intelligence</Option>
+  <Option value="Cybersecurity">Cybersecurity</Option>
+  <Option value="Cloud Computing">Cloud Computing</Option>
+  <Option value="UI/UX Design">UI/UX Design</Option>
+  <Option value="Graphic Design">Graphic Design</Option>
+  <Option value="IT">IT</Option>
+  <Option value="DevOps">DevOps</Option>
+  <Option value="Game Development">Game Development</Option>
+  <Option value="Database Administration">Database Administration</Option>
+  <Option value="Network Engineering">Network Engineering</Option>
+  <Option value="System Administration">System Administration</Option>
+  <Option value="Blockchain Development">Blockchain Development</Option>
+  <Option value="Quality Assurance">Quality Assurance</Option>
+  <Option value="Full Stack Development">Full Stack Development</Option>
+  <Option value="Front End Development">Front End Development</Option>
+  <Option value="Back End Development">Back End Development</Option>
+
+  {/* Design Fields */}
+  <Option value="Graphic Design">Graphic Design</Option>
+  <Option value="Product Design">Product Design</Option>
+  <Option value="Interior Design">Interior Design</Option>
+  <Option value="Fashion Design">Fashion Design</Option>
+  <Option value="Animation">Animation</Option>
+  <Option value="Video Editing">Video Editing</Option>
+  <Option value="Motion Graphics">Motion Graphics</Option>
+
+  {/* Medical Fields */}
+  <Option value="Medical">Medical</Option>
+  <Option value="Nursing">Nursing</Option>
+  <Option value="Pharmacy">Pharmacy</Option>
+  <Option value="Healthcare Management">Healthcare Management</Option>
+  <Option value="Dentistry">Dentistry</Option>
+  <Option value="Physiotherapy">Physiotherapy</Option>
+  <Option value="Radiology">Radiology</Option>
+
+  {/* Corporate Fields */}
+  <Option value="Corporate">Corporate</Option>
+  <Option value="Human Resources">Human Resources</Option>
+  <Option value="Finance">Finance</Option>
+  <Option value="Accounting">Accounting</Option>
+  <Option value="Sales">Sales</Option>
+  <Option value="Marketing">Marketing</Option>
+  <Option value="Business Development">Business Development</Option>
+  <Option value="Project Management">Project Management</Option>
+  <Option value="Entrepreneurship">Entrepreneurship</Option>
+
+  {/* Engineering Fields */}
+  <Option value="Mechanical Engineering">Mechanical Engineering</Option>
+  <Option value="Electrical Engineering">Electrical Engineering</Option>
+  <Option value="Civil Engineering">Civil Engineering</Option>
+  <Option value="Chemical Engineering">Chemical Engineering</Option>
+  <Option value="Electronics Engineering">Electronics Engineering</Option>
+
+  {/* Miscellaneous */}
+  <Option value="Teaching">Teaching</Option>
+  <Option value="Content Writing">Content Writing</Option>
+  <Option value="Journalism">Journalism</Option>
+  <Option value="Legal Services">Legal Services</Option>
+  <Option value="Customer Service">Customer Service</Option>
+  <Option value="Hospitality">Hospitality</Option>
+  <Option value="Event Management">Event Management</Option>
+            
             </Select>
           </div>
 
           {/* Experience */}
-          <div className="col-4">
+          <div className="col-lg-4 col-12 ">
             <Select
-              placeholder="Select experience"
-              className="w-100"
-              onChange={(value) => handleFilterChange(value, "experience")}
+              placeholder="Location"
+              className="custom-select col-11"
+
+              onChange={(value) => handleFilterChange(value, "jobRegion")}
             >
            <Option value="All">All</Option>
 
-              <Option value="fresh">Fresh</Option>
+           <Option value="inter">International</Option>
+              <Option value="karachi">Karachi</Option>
+  <Option value="lahore">Lahore</Option>
+  <Option value="quetta">Quetta</Option>
+  <Option value="peshawar">Peshawar</Option>
+  <Option value="gilgit">Gilgit</Option> 
+  
+  {/* Other Cities */}
+  <Option value="rawalpindi">Rawalpindi</Option>
+  <Option value="faisalabad">Faisalabad</Option>
+  <Option value="multan">Multan</Option>
+  <Option value="hyderabad">Hyderabad</Option>
+  <Option value="sialkot">Sialkot</Option>
+  <Option value="gujranwala">Gujranwala</Option>
+  <Option value="bahawalpur">Bahawalpur</Option>
+  <Option value="sukkur">Sukkur</Option>
+  <Option value="larkana">Larkana</Option>
+  <Option value="abbottabad">Abbottabad</Option>
+  <Option value="rahimyar-khan">Rahim Yar Khan</Option>
+  <Option value="sahiwal">Sahiwal</Option>
+  <Option value="gujrat">Gujrat</Option>
+  <Option value="mirpur">Mirpur</Option>
+  <Option value="muzaffarabad">Muzaffarabad</Option>
+  <Option value="nawabshah">Nawabshah</Option>
+  <Option value="dera-ghazi-khan">Dera Ghazi Khan</Option>
+  <Option value="mardan">Mardan</Option>
+  <Option value="swat">Swat</Option>
+  <Option value="kasur">Kasur</Option>
+  <Option value="mansehra">Mansehra</Option>
+  <Option value="jhang">Jhang</Option>
+  <Option value="sheikhupura">Sheikhupura</Option>
+  <Option value="kohat">Kohat</Option>
+  <Option value="dera-ismail-khan">Dera Ismail Khan</Option>
+  <Option value="khuzdar">Khuzdar</Option>
+  <Option value="chitral">Chitral</Option>
+  <Option value="gwadar">Gwadar</Option>
+  <Option value="hangu">Hangu</Option>
+  <Option value="khanewal">Khanewal</Option>
+  <Option value="havelian">Havelian</Option>
+  <Option value="chakwal">Chakwal</Option>
+  <Option value="bannu">Bannu</Option>
+  <Option value="daska">Daska</Option>
+  <Option value="shikarpur">Shikarpur</Option>
+  <Option value="turbat">Turbat</Option>
 
-<Option value="6months">6 Months</Option>
-<Option value="1year">1 Year</Option>
-<Option value="2years">2 Years</Option>
-<Option value="3years">3 Years</Option>
-<Option value="4years">4 Years</Option>
-<Option value="5years">5 Years</Option>
-<Option value="6years">6 Years</Option>
-<Option value="7years">7 Years</Option>
-<Option value="8years">8 Years</Option>
-<Option value="9years">9 Years</Option>
-<Option value="10years">10 Years</Option>
             </Select>
           </div>
 
           {/* Job Type */}
-          <div className="col-4">
+          <div className="col-lg-4 col-12 ">
             <Select
               placeholder="Select job type"
-              className="w-100"
+             className="custom-select col-11"
               onChange={(value) => handleFilterChange(value, "type")}
             >
            <Option value="All">All</Option>
@@ -170,11 +233,11 @@ console.log(data);
       {/* Filter */}
       {/* Job Cards */}
       <div className="container col-12 p-0 mx-auto d-flex flex-wrap">
-        <div className="col-12 d-flex flex-wrap">
+        <div className="col-12 d-flex flex-wrap justify-content-center ">
       
         {filteredData.length > 0 ? (
   filteredData.map((job, index) => (
-    <div className="col-lg-4 jobcard" key={index}>
+    <div className="col-lg-4 col-11  jobcard" key={index}>
       <div className="border p-2 rounded shadow-sm">
         <div className="d-flex align-items-center rounded-circle col-org">
           <div className="bg-white shadow px-2 py-1 rounded-5">
