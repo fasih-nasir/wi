@@ -132,12 +132,28 @@ const PostJob = () => {
             <TextArea placeholder="Job-Qualifications" autoSize={{ minRows: 3, maxRows: 5 }} />
           </Form.Item>
 
+
+  {/* salaryn */}
+  <Form.Item label="Salary" name="salary" rules={[{ required: true, message: "Please enter the salary!" }]}>
+            <TextArea placeholder="salary" autoSize={{ minRows:1, maxRows: 5 }} />
+          </Form.Item>
+
+
           {/* Job Type */}
           <Form.Item label="Job Type" name="type" rules={[{ required: true, message: "Please select the job type!" }]}>
             <Select placeholder="Select job type">
               <Option value="remote">Remote</Option>
               <Option value="hybrid">Hybrid</Option>
               <Option value="onsite">Onsite</Option>
+            </Select>
+          </Form.Item>
+
+          {/* Gender */}
+          <Form.Item label="Gender" name="Gender" rules={[{ required: true, message: "Please select the Gender !" }]}>
+            <Select placeholder="Select job type">
+              <Option value="Male">Male</Option>
+              <Option value="Female">Female</Option>
+              <Option value="Both">Both</Option>
             </Select>
           </Form.Item>
 

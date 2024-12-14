@@ -752,3 +752,8 @@ font-weight:300;
 font-family: var(--font-family) !important;
 }
 
+
+
+.col-grey1{
+  color: #747474;
+}
