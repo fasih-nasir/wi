@@ -32,6 +32,8 @@ export default function Jobdetail() {
           if (docSnap.exists()) {
             console.log("Document data:", docSnap.data());
             setdata(docSnap.data());
+            console.log(docSnap.data().a);
+            
           } else {
             console.log("No such document!");
           }
@@ -104,7 +106,17 @@ export default function Jobdetail() {
     <li className="mb-4 mt-4">
       <i className="fa-solid fa-calendar-days me-2 col-org" />
       <span>Date Posted</span>
-      <p className="text-muted mb-0"> {data.a[0]}-{data.a[1]}-{data.a[2]} </p>
+      <p className="text-muted mb-0">
+    {data?.a && Array.isArray(data.a) ? (
+      <>
+        <span>{data.a[0]}</span>
+        <span> - {data.a[1]}</span>
+        <span> - {data.a[2]}</span>
+      </>
+    ) : (
+      <span>Loading...</span>
+    )}
+  </p>
     </li>
     <li className="mb-4">
       <i className="fa-solid fa-location-dot me-2 col-org" />
