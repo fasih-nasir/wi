@@ -3,10 +3,25 @@ import { useEffect ,useState } from 'react';
 import { useLocation } from 'react-router'
 import { useParams } from 'react-router-dom';
 // 
-import { getDocs, getFirestore, collection,doc,getDoc } from "firebase/firestore";
+import { Button, Modal,message } from 'antd';
+
+// 
+import { getDocs, getFirestore, collection,doc,getDoc,addDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 // 
 export default function Jobdetail() {
+  // ANTD
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+// ANTD
   // FIREBASE
   const firebaseConfig = {
       apiKey: "AIzaSyAT4O_2PErTh_f7EAttbx5TI4kWtPShC6s",
@@ -20,7 +35,7 @@ export default function Jobdetail() {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const { jobId } = useParams();
-    console.log(jobId);
+    // console.log(jobId);
     const [data,setdata]=useState("")
     
     useEffect(() => {
@@ -30,26 +45,79 @@ export default function Jobdetail() {
           const docSnap = await getDoc(docRef); // Fetch the document
   
           if (docSnap.exists()) {
-            console.log("Document data:", docSnap.data());
+            // console.log("Document data:", docSnap.data());
             setdata(docSnap.data());
-            console.log(docSnap.data().a);
+            // console.log(docSnap.data().a);
             
           } else {
-            console.log("No such document!");
+            // console.log("No such document!");
           }
         } catch (err) {
-          console.error("Error fetching document:", err);
+          // console.error("Error fetching document:", err);
         }
       };
   
       getData();
     }, [jobId]); // Add jobId as a dependency
+  // FORM
+  const [messageApi, contextHolder] = message.useMessage();
+
+   const success = () => {
+      messageApi.open({
+        // className:"",
+        type: 'success',
+        content: 'Your message has been successfully forwarded to the admin. Thank you for reaching out!',
+        duration: 5,
+    //  top:50,
+      });
+    };
+    // contact form
+    const [result, setResult] = useState("");
   
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending...");
+    
+      const formData = new FormData(event.target);
+      const formObject = Object.fromEntries(formData.entries());
+    
+      try {
+        // Add data to Firestore collection "contact-us"
+        const docRef = await addDoc(collection(db, "Applied-Job"), formObject);
+        console.log(formObject);
+        
+     
+    
+        // Send email using Web3Forms
+        formData.append("access_key", "d92bdf8f-5c6e-41f8-8b11-8b305e40cbf1");  // Replace with your key
+    
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+    
+        const data = await response.json();
+    
+        if (data.success) {
+          setResult("Form submitted successfully!");
+          event.target.reset(); // Reset the form
+          success()
+        } else {
+          setResult("Failed to send email. Please try again.");
+        }
+    
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        alert("Failed to submit form. Please try again.");
+      }
+    };
+  // FORM
     return (
       // FIREBASE
     <div>
- <div className="container-fluid d-flex  flex-lg-row flex-column  m-0 px-4 pt-5">
+ <div className="container-fluid d-flex  flex-lg-row flex-column mb-5  m-0 px-4 pt-5">
 {/* col-9 */}
+{contextHolder}
  <div className="col-lg-9 col-12  jobcard mt-4">
       <div className=" p-2 rounded shadow-sm">
       
@@ -98,8 +166,10 @@ export default function Jobdetail() {
   {/* Apply Now Button */}
   <div className="text-center mb-5">
    
-    <button className="org border-0 py-2 col-11 mx-auto rounded-1  mt-2">Apply Now</button>
-
+    {/* <button >Apply Now</button> */}
+    <Button className="org border-0 py-2 col-11 mx-auto rounded-1  mt-2"  type="primary" onClick={showModal}>
+        Apply Now
+      </Button>
   </div>
   {/* Job Details */}
   <ul className="list-unstyled px-3">
@@ -145,7 +215,21 @@ export default function Jobdetail() {
 
     {/* col-3 */}
   </div>
-
+{/* modal */}
+<Modal title="Job Form" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+<form onSubmit={onSubmit}>
+    <input type="text" placeholder='Enter Your Name' className=' col-12 mx-auto'  name="Name" id="" />
+    
+    <input type="number" placeholder='+92 314890197' className='col-12 mx-auto'   name="Number" id="" />
+    <input type="email" placeholder='Enter Your Email ' className=' col-12 mx-auto'  name="Email" id="" />
+    <br />
+    <input type="hidden"name="Job-Title"  placeholder='Enter Your Email  'value={data.jobTitle}  className='mx-1 border-0' id="" />
+<br />
+    <input type="hidden" name="Job-Cateogery"  placeholder='Enter Your Email 'value={data.cat}  className='mx-1 border-0' id="" />
+   <button type='submit' >Send </button>
+    </form>
+      </Modal>
+{/* modal */}
     </div>
   )
 }
