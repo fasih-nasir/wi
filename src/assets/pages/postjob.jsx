@@ -150,12 +150,22 @@ const PostJob = () => {
 
           {/* Gender */}
           <Form.Item label="Gender" name="Gender" rules={[{ required: true, message: "Please select the Gender !" }]}>
+            <Select placeholder="Select Gender">
+              <Option value="Male">Male</Option>
+              <Option value="Female">Female</Option>
+              <Option value="Both">Both</Option>
+            </Select>
+          </Form.Item>
+
+             {/* Job Type */}
+             <Form.Item label="JobType" name="JobType" rules={[{ required: true, message: "Please select the Gender !" }]}>
             <Select placeholder="Select job type">
               <Option value="Male">Male</Option>
               <Option value="Female">Female</Option>
               <Option value="Both">Both</Option>
             </Select>
           </Form.Item>
+
 
           {/* Job Region */}
           <Form.Item label="Job Region" name="jobRegion" rules={[{ required: true, message: "Please select the job region!" }]}>
