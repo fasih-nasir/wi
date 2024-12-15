@@ -15,9 +15,9 @@ export default function Jobdetail() {
   const showModal = () => {
     setIsModalOpen(true);
   };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
+  // const handleOk = () => {
+  //   setIsModalOpen(false);
+  // };
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -90,7 +90,8 @@ export default function Jobdetail() {
     
         // Send email using Web3Forms
         formData.append("access_key", "d92bdf8f-5c6e-41f8-8b11-8b305e40cbf1");  // Replace with your key
-    
+       
+       
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData,
@@ -102,6 +103,7 @@ export default function Jobdetail() {
           setResult("Form submitted successfully!");
           event.target.reset(); // Reset the form
           success()
+          setIsModalOpen(false);
         } else {
           setResult("Failed to send email. Please try again.");
         }
@@ -216,17 +218,24 @@ export default function Jobdetail() {
     {/* col-3 */}
   </div>
 {/* modal */}
-<Modal title="Job Form" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+<Modal title="Job Form" open={isModalOpen}  onCancel={handleCancel}footer={null} >
 <form onSubmit={onSubmit}>
-    <input type="text" placeholder='Enter Your Name' className=' col-12 mx-auto'  name="Name" id="" />
+  <div>
+    <input type="text" placeholder=' Your Name' className=' me-1'  name="Name" id="" />
     
-    <input type="number" placeholder='+92 314890197' className='col-12 mx-auto'   name="Number" id="" />
-    <input type="email" placeholder='Enter Your Email ' className=' col-12 mx-auto'  name="Email" id="" />
+    <input type="number" placeholder='+92 314890197' className=' mx-auto'   name="Number" id="" />
+    </div>
+    <div>
+    <input type="email" placeholder='Your Email ' className=' me-1'  name="Email" id="" />
+    <input type="url" placeholder='CV / Portfolio URL' className='  me-1'  name="CV Url" id="" />
+  
+    </div>
     <br />
     <input type="hidden"name="Job-Title"  placeholder='Enter Your Email  'value={data.jobTitle}  className='mx-1 border-0' id="" />
 <br />
-    <input type="hidden" name="Job-Cateogery"  placeholder='Enter Your Email 'value={data.cat}  className='mx-1 border-0' id="" />
-   <button type='submit' >Send </button>
+<div className="d-flex justify-content-center">
+   <button type='submit' className=" okbtn col-2 org border-0    " >Send </button>
+   </div>
     </form>
       </Modal>
 {/* modal */}
