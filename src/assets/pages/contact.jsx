@@ -202,7 +202,7 @@ const db = getFirestore(app)
         {/* Email */}
         <div className=" mb-3 col-5">
           <input
-            type="email"
+            type="text"
             className="p-3 col-12 "
             id="email"
             name='Last Name'

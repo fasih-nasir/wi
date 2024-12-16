@@ -65,10 +65,10 @@ setfield1(value)
 
   return (
     <>
-   <div className="container-fluid jobcont d-flex flex-column  justify-content-center align-items-center">
+   <div className="container-fluid jobcont d-flex position-relative flex-column  justify-content-center align-items-center">
   <h1 className="text-white text-capitalize display-4 fw-medium text-center ">get the right job <br />you deserve </h1>
    <div className="container-fluid px-lg-5 d-flex  py-4 justify-content-center align-items-center">
-        <div className="d-flex flex-lg-row flex-column col-12 p-lg-4 py-2 px-2  gap-3 bg-white  justify-content-around jbdi  " style={{ fontFamily: "Outfit" }}>
+        <div className="d-flex  divf flex-lg-row flex-column col-12 p-lg-4 py-2 px-2  gap-3 bg-white  justify-content-around jbdi  " style={{ fontFamily: "Outfit" }}>
           {/* Job Category */}
           <div className="col-lg-4 col-12  ">
             <Select
@@ -232,7 +232,7 @@ setfield1(value)
 
       {/* Filter */}
       {/* Job Cards */}
-      <div className="container col-12 p-0 mx-auto d-flex flex-wrap ">
+      <div className="container col-12 mt-5 pt-5  mx-auto d-flex flex-wrap ">
         <div className="col-12 d-flex flex-wrap justify-content-center ">
       
         {filteredData.length > 0 ? (

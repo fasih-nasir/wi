@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); */
 :root {
   --button-bg: #34355;
   --cont-bg: #0955;
   --color: #f39224;
+  /* --font-family:"Questrial", sans-serif !important; */
   --font-family: "Outfit", sans-serif;
   --color1: #797979;
 }
@@ -11,6 +12,7 @@ html {
   scroll-behavior: smooth !important;
 }
 body{
+  font-family: var(--font-family) !important;
   scroll-behavior: smooth !important;
 }
 
@@ -725,9 +727,7 @@ Input::placeholder {
   object-fit: cover;
   background-size: cover;
 }
-.jbdi{
-  border-radius:10px;
-}
+
 .ino{
   color: #000 !important;
   border: none !important;
@@ -879,4 +879,13 @@ border-radius: 50px;
   50% {
     transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
   }
+}
+
+.divf{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;  width: 92% !important;
+  margin: auto !important;
+  bottom: -30px !important;
+border-radius: 10px;
+width:90% !important;
+  position:absolute !important;
 }
