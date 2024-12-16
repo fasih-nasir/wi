@@ -22,7 +22,7 @@ export default function Jobs() {
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-
+var [field1,setfield1]=useState("")
   useEffect(() => {
     const getData = async () => {
       try {
@@ -44,7 +44,7 @@ export default function Jobs() {
 
   const handleFilterChange = (value, field) => {
 
-
+setfield1(value)
     if (value === "All" ){
 
       setFilteredData(data)
@@ -232,37 +232,77 @@ export default function Jobs() {
 
       {/* Filter */}
       {/* Job Cards */}
-      <div className="container col-12 p-0 mx-auto d-flex flex-wrap">
+      <div className="container col-12 p-0 mx-auto d-flex flex-wrap ">
         <div className="col-12 d-flex flex-wrap justify-content-center ">
       
         {filteredData.length > 0 ? (
   filteredData.map((job, index) => (
-    <div className="col-lg-4 col-11  jobcard" key={index}>
-      <div className="border p-2 rounded shadow-sm">
-        <div className="d-flex align-items-center rounded-circle col-org">
-          <div className="bg-white shadow px-2 py-1 rounded-5">
-            <i className="fa-solid fa-briefcase"></i>
-          </div>
-          <h4 className="pt-2 px-2">{job.data().jobTitle}</h4>
-        </div>
-        <p>{job.data().desc}</p>
-        <p>Experience: {job.data().experience}</p>
-        <p>Job Type: {job.type}</p>
-        <p>Job Category: {job.data().cat}</p>
-    
-        <Link to={`/job-detail/${job.id}`} target="_blank" >
+    // start 
+<div  className="col-lg-4 col-11  jobcard  my-2 " key={index} >
+
+  <div
+    className="card text-center shadow-lg  jobcard  px-1 py-3"
+
+  > <div className="d-flex justify-content-between px-2 mb-2">
+
+  <span className="badge org text-uppercase hr">{job.data().type}</span>
+</div>
+
+    {/* Icon */}
+    <div className="text-center mb-3 ">
+      <i
+        className="fa-solid fa-briefcase org p-3 fb1 rounded-5"
+  
+      />
+    </div>
+    {/* Employer */}
+    <h6 className="col-grey hr">  {job.data()?.a && Array.isArray(job.data().a) ? (
+      <>
+        <span>{job.data().a[0]}</span>
+        <span> - {job.data().a[1]}</span>
+        <span> - {job.data().a[2]}</span>
+      </>
+    ) : (
+      <span>Loading...</span>
+    )}</h6>
+    {/* Job Title */}
+    <h5 className=" col-grey hr text-truncate px-2">{job.data().jobTitle}</h5>
+    {/* Location */}
+    <div className="d-flex justify-content-center align-items-center">
+      <i className="fa-solid fa-location-dot col-grey hr  px-2" />
+      <span className="text-capitalize col-grey hr">{job.data().jobRegion}</span>
+    </div>
+    <button className="col-4 mx-auto mt-3 border-0 org py-2 rounded-5 " >
+    <Link to={`/job-detail/${job.id}`} target="_blank" className="text-white text-decoration-none" >
         More-Info
         </Link>
-        {/* <button  >MORE-INFO</button> */}
-      </div>
-    </div>
+        </button>
+  </div>
+</div>
+    // end
+
   ))
 ) : (
-  <div className="col-lg-12 text-center">
-    <p>No jobs available</p>
+  <div className="col-lg-12 text-center d-flex flex-column justify-content-center h-0 align-items-center">
+ <div class="spinner mb-5">
+  <div></div>   
+  <div></div>    
+  <div></div>    
+  <div></div>    
+  <div></div>    
+  <div></div>    
+  <div></div>    
+  <div></div>    
+  <div></div>    
+  <div></div>    
+</div>
+{/* <span>{field1}</span> */}
+    <h2 className="mt-5 pt-5 text-capitalize">{field1}Job Is Not Available Now</h2>
   </div>
 )}
-
+<div>
+  
+</div>
         </div>
       </div>
     </>
