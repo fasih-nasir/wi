@@ -189,7 +189,7 @@ return()=> {
  {/* ABOUT */}
 <div className="py-5 container-fluid about d-flex flex-lg-row flex-column justify-content-center align-items-center">
 {/* <div className="col-1"></div> */}
-  <div className="col-lg-6 px-4 col-12 py-4">
+  <div className="col-lg-6  px-lg-4 col-12 py-4">
     <span className="text-uppercase px-1 py-2 col-org">About Us</span>
     <h1 className="display-4 fw-normal text-capitalize">
     scalable HR solutions for businesses.
@@ -220,12 +220,12 @@ return()=> {
  {/* SERVICE */}
  <div className="container-fluid m-0" id="serv">
   <div className="container-fluid m-0 ">
-    <div className="row p-5 d-flex flex-column justify-content-center align-items-center dhru">
+    <div className="row p-lg-5 py-4 d-flex flex-column justify-content-center align-items-center dhru">
       <div className=" text-center" id="serc1">
         <p className="fw-normal">OUR SERVICE AREA</p>
       </div>
-      <div className="text-center" id="serc1">
-        <h1 className="fw-normal">
+      <div className="text-center col-12" id="serc1">
+        <h1 className="fw-normal col-12 ">
           Outsourced Hiring &amp; Job
           <br />
           Rules Services
@@ -335,7 +335,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
       <div className="container d-flex flex-lg-row gap-lg-4 flex-column justify-content-between">
         {/* Stat 1 */}
         <div className="col-lg-3 col-12 mb-4">
-          <div className="d-flex flex-row  card ">
+          <div className="d-flex flex-row  card  ">
             <img
               src={stats1}
               className="col-lg-4 col-6"
@@ -403,16 +403,18 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
           </div>
         </div>
         {/*  */}
+   
       </div>
+
     </div>
 {/* STATS */}
 {/* FAQS */}
-<div className="container-fluid d-flex px-4 mt-5 pt-5 flex-lg-row flex-column justify-content-center align-items-center">
- <div className="col-lg-6 px-2">
-  <p className="org col-lg-4 col-5 mx-lg-0 mx-auto px-3 py-1 rounded-4">Get Some Question</p>
+<div className="container-fluid col-12  d-flex px-4 mt-5 pt-5 flex-lg-row flex-column justify-content-center align-items-center">
+ <div className="col-lg-6 col-12 px-lg-2 ">
+  <p className="org col-lg-4 col-12 mx-lg-0 mx-auto px-3 py-1 rounded-4">Get Some Question</p>
 <h1> Together, we can elevate your team and business to their fullest potential.</h1>
 {/* ANTD */}
-<div className="accordion my-5 m-0 p-0" id="accordionPanelsStayOpenExample">
+<div className="accordion my-5 m-0 p-0 " id="accordionPanelsStayOpenExample">
   <div className="accordion-item m-0 p-0">
     <h2 className="accordion-header">
       <button
@@ -489,8 +491,8 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 
 {/* ANTD */}
  </div>
- <div className="col-lg-6">
-<img src={faqs} className="img-fluid"  alt="" srcset="" />
+ <div className="col-lg-6 col-12">
+<img src={faqs} className="img-fluid col-12"  alt="" srcset="" />
 </div> 
 
 </div>

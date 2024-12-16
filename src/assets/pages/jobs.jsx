@@ -67,8 +67,8 @@ setfield1(value)
     <>
    <div className="container-fluid jobcont d-flex flex-column  justify-content-center align-items-center">
   <h1 className="text-white text-capitalize display-4 fw-medium text-center ">get the right job <br />you deserve </h1>
-   <div className="container-fluid px-5 d-flex  py-4 justify-content-center align-items-center">
-        <div className="d-flex flex-lg-row flex-column col-12 p-4  gap-3 bg-white  justify-content-around jbdi  " style={{ fontFamily: "Outfit" }}>
+   <div className="container-fluid px-lg-5 d-flex  py-4 justify-content-center align-items-center">
+        <div className="d-flex flex-lg-row flex-column col-12 p-lg-4 py-2 px-2  gap-3 bg-white  justify-content-around jbdi  " style={{ fontFamily: "Outfit" }}>
           {/* Job Category */}
           <div className="col-lg-4 col-12  ">
             <Select
@@ -272,11 +272,11 @@ setfield1(value)
       <i className="fa-solid fa-location-dot col-grey hr  px-2" />
       <span className="text-capitalize col-grey hr">{job.data().jobRegion}</span>
     </div>
-    <button className="col-4 mx-auto mt-3 border-0 org py-2 rounded-5 " >
     <Link to={`/job-detail/${job.id}`} target="_blank" className="text-white text-decoration-none" >
+    <button className="col-4 mx-auto mt-3 border-0 org py-2 rounded-5 " >
         More-Info
-        </Link>
         </button>
+        </Link>
   </div>
 </div>
     // end

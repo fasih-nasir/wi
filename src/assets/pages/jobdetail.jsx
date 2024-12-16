@@ -66,12 +66,19 @@ export default function Jobdetail() {
       messageApi.open({
         // className:"",
         type: 'success',
-        content: 'Your message has been successfully forwarded to the admin. Thank you for reaching out!',
+        content: 'Your job request has been successfully forwarded to the admin. Thank you for reaching out!',
         duration: 5,
     //  top:50,
       });
     };
+    const error = () => {
+      messageApi.open({
+        type: 'error',
+        content: 'This is an error message',
+      });
+    };
     // contact form
+    var loc=useLocation()
     const [result, setResult] = useState("");
   
     const onSubmit = async (event) => {
@@ -84,7 +91,7 @@ export default function Jobdetail() {
       try {
         // Add data to Firestore collection "contact-us"
         const docRef = await addDoc(collection(db, "Applied-Job"), formObject);
-        console.log(formObject);
+        // console.log(formObject);
         
      
     
@@ -104,13 +111,21 @@ export default function Jobdetail() {
           event.target.reset(); // Reset the form
           success()
           setIsModalOpen(false);
+        
+          setTimeout(() => {
+            window.location.href = "/job"; 
+          },4500);
+      
         } else {
-          setResult("Failed to send email. Please try again.");
+          error()
+          // setResult("Failed");
         }
     
       } catch (error) {
-        console.error("Error adding document: ", error);
-        alert("Failed to submit form. Please try again.");
+        // console.error("Error adding document: ", error);
+        // alert("Failed");
+        // error()
+
       }
     };
   // FORM
@@ -128,13 +143,13 @@ export default function Jobdetail() {
           <div className="p-3  me-1  display-5  bref ">
             <i className="fa-solid fa-briefcase"></i>
           </div>
-          <div className='d-flex flex-column col-12 '>
+          <div className='d-flex flex-column col-12 ps-lg-1'>
       
           <h2 className="pt-2 px-2 col-org text-lg-start text-center ">{data.jobTitle}</h2>
     
-      <div className='d-flex col-lg-12 mt-lg-0 mt-4  mx-auto  flex-row  justify-content-lg-start align-items-center   gap-1'>
-   <div className='d-flex flex-lg-row flex-column'>
-         <p className='i0   bg-white shadow-lg  px-3 py-1   text-capitalize d-flex flex-lg-row flex-column    align-items-center text-lg-start  text-center ' ><i className="fa fa-list-alt px-2  col-grey  " aria-hidden="true" /> {data.cat}</p>
+      <div className='d-flex col-lg-12 mt-lg-0 mt-4  mx-auto  flex-lg-row  flex-column  justify-content-lg-start align-items-center   gap-1'>
+   <div className='d-flex flex-lg-row  flex-column  '>
+         <p className='i0   bg-white shadow-lg   px-3 py-1   text-capitalize d-flex flex-lg-row flex-column    align-items-center text-lg-start  text-center ' ><i className="fa fa-list-alt px-2  col-grey  " aria-hidden="true" /> {data.cat}</p>
          <p className='i0  bg-white shadow-lg px-3  py-1   text-capitalize d-flex flex-lg-row flex-column    align-items-center text-lg-start  text-center ' ><i className="fa-solid fa-location-dot pe-1 ps-2 col-grey  " aria-hidden="true" /> {data.jobRegion}</p>
          </div>
          <div  className='d-flex flex-lg-row flex-column'>
@@ -169,7 +184,7 @@ export default function Jobdetail() {
   <div className="text-center mb-5">
    
     {/* <button >Apply Now</button> */}
-    <Button className="org border-0 py-2 col-11 mx-auto rounded-1  mt-2"  type="primary" onClick={showModal}>
+    <Button className="org border-0 py-2 col-11 mx-auto rounded-1  mt-2"   onClick={showModal}>
         Apply Now
       </Button>
   </div>
@@ -220,14 +235,14 @@ export default function Jobdetail() {
 {/* modal */}
 <Modal title="Job Form" open={isModalOpen}  onCancel={handleCancel}footer={null} >
 <form onSubmit={onSubmit}>
-  <div>
-    <input type="text" placeholder=' Your Name' className=' me-1'  name="Name" id="" />
+  <div className='col-12 d-flex flex-lg-row flex-column'>
+    <input type="text" required placeholder=' Your Name' className='me-lg-1 col-lg-6 col-12'  name="Name" id="" />
     
-    <input type="number" placeholder='+92 314890197' className=' mx-auto'   name="Number" id="" />
+    <input type="number" required  placeholder='+92 314890197' className=' col-lg-6 col-12'   name="Number" id="" />
     </div>
-    <div>
-    <input type="email" placeholder='Your Email ' className=' me-1'  name="Email" id="" />
-    <input type="url" placeholder='CV / Portfolio URL' className='  me-1'  name="CV Url" id="" />
+    <div className='col-12 d-flex flex-lg-row flex-column'>
+    <input type="email" placeholder='Your Email' required className=' me-lg-1 col-lg-6 col-12'  name="Email" id="" />
+    <input type="url" placeholder='CV / Portfolio URL'required  className='  col-lg-6 col-12'  name="CV Url" id="" />
   
     </div>
     <br />

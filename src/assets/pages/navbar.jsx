@@ -105,7 +105,7 @@ else{
         {/* TOP HEADER */}
 
     {/*NAVBAR  */}
-    <nav className="navbar navbar-expand-lg px-3 bg-white" id="navbar">
+    <nav className="navbar navbar-expand-lg px-lg-3 bg-white" id="navbar">
   <div className="container-fluid">
     <a className="navbar-brand col-lg-2 col-6" href="#">
       <img src={logodark} className='col-12' alt="" />
@@ -236,14 +236,14 @@ else{
 {/* offcanvas */}
 <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div className="offcanvas-header">
-    <h5 id="offcanvasRightLabel" className='col-7'>
-    <a className="navbar-brand col-lg-2 col-6" href="#">
-      <img src={logodark} className='col-12' alt="" />
+    <h5 id="offcanvasRightLabel" className='col-12 d-flex justify-content-center align-items-center'>
+    <a className="navbar-brand mx-auto  col-12 d-flex justify-content-center align-items-center" href="#">
+      <img src={logodark} className='col-8 mx-auto mt-3' alt="" />
     </a>
     </h5>
-    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    {/* <button type="button" className="" data-bs-dismiss="offcanvas" aria-label="Close"></button> */}
   </div>
-  <div className="offcanvas-body d-flex justify-content-center align-items-center">
+  <div className="offcanvas-body d-flex ">
   <ul className="navbar-nav mx-auto ">
       <li className="nav-item px-2">
         <Link

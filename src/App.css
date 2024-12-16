@@ -492,7 +492,7 @@ nav {
 @media (max-width:992px) {
 
   .ft {
-    font-size: 64px;
+    font-size: 34px;
   }
 }
 
@@ -656,6 +656,20 @@ a>i {
   font-size: 24px;
 }
 
+@media (max-width:992px) {
+  .offcanvas{
+    
+    border: none !important;
+    z-index: 111111 !important;
+    width: 75% !important;
+  }
+  .nav-items{
+    border: none !important;
+  }
+}
+.offcanvas{
+transition: 1.2s ease-in-out !important;
+}
 input:focus {
 
   outline: none !important;
@@ -758,6 +772,7 @@ font-family: var(--font-family) !important;
   color: #747474cb;
 }
 .i0{
+  background-color: red !important;
   color: #747474cb;
 font-weight: 400;
 border-radius: 50px;

@@ -87,7 +87,7 @@ const db = getFirestore(app)
    
 {/* home */}
 <div className='container-fluid d-flex justify-content-center align-items-center flex-column cont-page'>
-    <h2 className='text-white text-center display-3 fw-normal mx-auto col-5'>Contact-US</h2>
+    <h2 className='text-white text-center display-3 fw-normal mx-auto col-lg-5'>Contact-US</h2>
     <span className='text-white'>Feel Free To Contact Our Support</span>
     </div>
 {/* home */}
@@ -106,7 +106,7 @@ const db = getFirestore(app)
                <i className="fa fa-envelope" aria-hidden="true"></i>
                 </div>
               </div>
-              <h5 className="card-title fw-bold">Email Address</h5>
+              <h5 className="card-title col-grey ">Email Address</h5>
               <p className="card-text mb-1 col-grey">info@yourmail.com</p>
               <p className="card-text col-grey">email@example.com</p>
             </div>
@@ -125,7 +125,7 @@ const db = getFirestore(app)
           <i className="fa-solid fa-location-dot"></i>
                 </div>
               </div>
-              <h5 className="card-title fw-bold">Our Address</h5>
+              <h5 className="card-title col-grey">Our Address</h5>
             <a 
             href="https://www.google.com/maps?q=76-C+Second+Floor+11th+Commercial+Street+%232+Ext+DHA,+Opp.+Bank+of+Khyber+Karachi,+Pakistan"
             target="_blank"
@@ -152,7 +152,7 @@ const db = getFirestore(app)
        <i class="fa-solid fa-clock"></i>
                 </div>
               </div>
-              <h5 className="card-title fw-bold">Hours</h5>
+              <h5 className="card-title col-grey">Hours</h5>
               <p className="card-text mb-1 col-grey">Mon - Fri: 9am - 5pm</p>
               <p className="card-text col-grey">Sat - Sun: closed</p>
             </div>
@@ -165,7 +165,7 @@ const db = getFirestore(app)
       <section className="container py-5">
   <div className="row d-flex justify-content-center align-items-center bg-white shadow-sm px-2 py-5">
     {/* Left Column */}
-    <div className="col-md-6  d-flex justify-content-center  flex-column">
+    <div className="col-md-6 mb-lg-0 mb-5 d-flex justify-content-center  flex-column">
       <h6 className=" col-org">MESSAGE US</h6>
       <h1 className="display-5 fw-medium">Have be any Question?
       feel free to contact with us.</h1>
@@ -262,7 +262,7 @@ const db = getFirestore(app)
         </div>
         {/* Send Message Button */}
         <div className="col-12 d-flex justify-content-center align-items-center">
-        <button type="submit" className="org  col-4 border-0 p-2 rounded-5">
+        <button type="submit" className="org  col-lg-4 border-0 p-2 rounded-5">
           Send Message
         </button>
         </div>

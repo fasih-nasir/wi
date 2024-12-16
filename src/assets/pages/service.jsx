@@ -13,7 +13,7 @@ export default function Service() {
   return (
     <>
     <div className='container-fluid d-flex justify-content-center align-items-center flex-column ser-page'>
-    <h2 className='text-white text-center display-3 fw-normal mx-auto col-5'>Our-Service</h2>
+    <h2 className='text-white text-center display-3 fw-normal mx-auto col-lg-5'>Our-Service</h2>
     <span className='text-white'>About Our Service_</span>
     </div>
  
@@ -30,7 +30,7 @@ export default function Service() {
      </div>
      <div className="col-12 d-flex flex-lg-row flex-column m-0 px-4 py-5 justify-content-between">
       <div className="col-lg-6">
-       <p className="fw-normal h5 org col-lg-5 col-5 mx-lg-0 mx-auto  px-2 py-2 rounded-5">What We Offer <i className=" rounded-5 fa-solid fa-angle-right"></i><i className="fa-solid fa-angle-right"></i></p>
+       <p className="fw-normal h5 org col-lg-5  mx-lg-0 mx-auto  px-2 py-2 rounded-5">What We Offer <i className=" rounded-5 fa-solid fa-angle-right"></i><i className="fa-solid fa-angle-right"></i></p>
 
       </div>
       <div className="col-lg-5">
@@ -127,7 +127,7 @@ export default function Service() {
     {/* swiper */}
 
 {/* WHYS US  */}
-<div className="container d-flex flex-column   px-4 pt-4 my-5">
+<div className="container d-flex flex-column   px-lg-4 pt-4 my-5">
   {/* <div className="row "> */}
     <div className="container col-12 d-flex flex-column  justify-content-center  m-0 p-0">
       <h2 className='col-12 mx-auto text-center '>Why choose Emphires services?</h2>
