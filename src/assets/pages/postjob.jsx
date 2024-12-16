@@ -113,7 +113,10 @@ const PostJob = () => {
           </Form.Item>
 
           {/* Job Benefit */}
-          <Form.Item label="Job Benefit" name="benefit" rules={[{ required: true, message: "Please enter the job Benefit!" }]}>
+          <Form.Item label="Job Benefit" name="benefit"   
+            rules={[{ required: true, message: "Please enter the job Benefit!" }]}
+          
+          >
             <TextArea placeholder="Benefit" autoSize={{ minRows: 2, maxRows: 5 }} />
           </Form.Item>
 
@@ -157,20 +160,11 @@ const PostJob = () => {
             </Select>
           </Form.Item>
 
-             {/* Job Type */}
-             <Form.Item label="JobType" name="JobType" rules={[{ required: true, message: "Please select the Gender !" }]}>
-            <Select placeholder="Select job type">
-              <Option value="Male">Male</Option>
-              <Option value="Female">Female</Option>
-              <Option value="Both">Both</Option>
-            </Select>
-          </Form.Item>
-
 
           {/* Job Region */}
           <Form.Item label="Job Region" name="jobRegion" rules={[{ required: true, message: "Please select the job region!" }]}>
             <Select placeholder="Select job region">
-              <Option value="inter">International</Option>
+              <Option value="internatinol">Internatinol</Option>
               <Option value="karachi">Karachi</Option>
   <Option value="lahore">Lahore</Option>
   <Option value="quetta">Quetta</Option>

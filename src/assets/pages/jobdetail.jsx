@@ -169,6 +169,9 @@ export default function Jobdetail() {
  
         <h4>Skill</h4>
         <p className='col-grey1 py-3 '> {data.skill}</p>
+
+        <h4>Benefit</h4>
+        <p className='col-grey1 py-3 '> {data.benefit}</p>
         <h4>Qualification</h4>
         <p className='col-grey1 py-3'> {data.qua}</p>
 
@@ -221,6 +224,9 @@ export default function Jobdetail() {
       <span>Experience</span>
       <p className="text-muted mb-0">{data.experience}</p>
     </li>
+
+
+    
     <li className="mb-4">
       <i className="fa-solid fa-user me-2 col-org" />
       <span>Gender</span>

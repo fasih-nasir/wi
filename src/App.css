@@ -12,6 +12,7 @@ html {
   scroll-behavior: smooth !important;
 }
 body{
+  text-transform: capitalize;
   font-family: var(--font-family) !important;
   scroll-behavior: smooth !important;
 }
@@ -630,7 +631,7 @@ input,
 textarea {
   border-bottom: 1px solid rgb(187, 187, 187) !important;
   border: none;
-  text-transform: capitalize !important;
+  /* text-transform: capitalize !important; */
   /* border-radius: 7px; */
 
   transition: 0.9s ease-in-out;
