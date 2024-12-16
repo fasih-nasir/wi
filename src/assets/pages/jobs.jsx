@@ -224,9 +224,9 @@ setfield1(value)
         </div>
       </div>
    </div>
-      <div>
-        <Link to={"/postjob"}>
-          <button>Post A Job</button>
+      <div className="col-1">
+        <Link to={"/post"}>
+          <button className="bg-transparent border-0 text-white" >Post A Job</button>
         </Link>
       </div>
 

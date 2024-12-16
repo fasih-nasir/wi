@@ -35,7 +35,7 @@ export default function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       message.success('Login Successful!');
-      navigate("/postjob");
+      navigate("/post");
     //   console.log('User Logged In:', user);
       // You can redirect the user to a dashboard or another page here
     } catch (error) {
