@@ -1,7 +1,16 @@
 import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import 'animate.css';
+// SWIPER
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+
+
+// SWIPER
 // FLES
 import "../../App.css";
 import 'animate.css';
@@ -19,10 +28,45 @@ import stats3 from "../image/stats3.jpg"
 import stats4 from "../image/stats4.jpg"
 import faqs from "../image/faqs.webp";
 import Footer from "./footer";
-export default function Home() {
-  // ANTD
+import test1 from "../image/test\ \(2\).jpg"
+import test2 from "../image/test\ \(1\).jpg"
+import test3 from "../image/test\ \(3\).jpg"
 
-  // ANTD
+
+export default function Home() {
+  
+var [slideArr,setslideArr]=useState(
+  [
+    {name: "Iqbal Khan",
+     img:test1,
+     des:"I am extremely impressed with the services provided by WIHR team. Their team demonstrated exceptional knowledge and expertise in creating ", 
+    },
+    {name: "Talha Wajid",
+      img:test2,
+      des:"WIHR professionalism, prompt communication, and commitment to delivering high-quality results exceeded expectations. I highly recommend WIHR  ", 
+     },
+     {name: "Khuram Nasir",
+      img:test3,
+      des:"Working with WIHR Websites has been an absolute pleasure. As a HR professional, I understand the importance of having a strong online presence ", 
+     },
+  ]
+)
+var [car,setcar]=useState(0);
+useEffect(()=>{
+var time= setInterval(() => {
+
+car=car+1
+if(car>2) car=0;
+setcar(car)
+
+}, 7000)
+// console.log(car);
+ 
+return ()=> clearTimeout(time)
+
+},[car])
+// console.log(car);
+
   var [stats,setstate]=useState("")
   // STATS
 var num=0;
@@ -46,7 +90,7 @@ const timer= setTimeout(() => {
 load.classList.add("ad")
   setloader(false)
 
-}, 3000);
+}, 4000);
 return()=> {
 
     clearTimeout(timer)
@@ -332,7 +376,7 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 <p className="text-center pb-5 col-grey"> Our HR consultancy services empower businesses to optimize their workforce strategies, fostering a culture of growth and innovation. With tailored solutions, we address unique organizational needs, ensuring compliance and enhancing employee engagement. </p>
       </div>
      </div>
-      <div className="container d-flex flex-lg-row gap-lg-4 flex-column justify-content-between">
+      <div className="container d-flex flex-lg-row gap-lg-3 flex-column justify-content-between">
         {/* Stat 1 */}
         <div className="col-lg-3 col-12 mb-4">
           <div className="d-flex flex-row  card  ">
@@ -408,6 +452,25 @@ Empowering <span className="org fw-bold px-2 rounded-3">Workplaces</span> with H
 
     </div>
 {/* STATS */}
+<div className="container-fluid d-flex flex-lg-row flex-column  m-0 p-0">
+  
+  <div className="col-lg-6  col-12 c11  d-flex flex-column  justify-content-center align-items-center  py-5">
+<h1 className="text-white display-4 col-lg-9  ps-4 me-auto py-5  text-start ">
+Our Valued Clients About  Experience with Our Services
+
+</h1>
+
+  </div>
+  <div className="col-lg-6  col-12 testimg1 pt-lg-0 pt-4  d-flex flex-column  justify-content-center align-items-center ">
+
+<img src={slideArr[car].img} className="img-fluid imgc col-2 mx-auto " alt="" />
+  <h5 className=" py-3 col-10 text-center col-grey fw-light mt-4 mb-4" ><i className="fa-solid col-org fa-quote-left pe-2"></i>{slideArr[car].des}<i className="fa-solid fa-quote-right ps-2 col-org"></i></h5>
+
+<p className="fw-medium  px-4 py-2  " >{slideArr[car].name}</p>
+ 
+  </div>
+ 
+</div>
 {/* FAQS */}
 <div className="container-fluid col-12  d-flex px-4 mt-5 pt-5 flex-lg-row flex-column justify-content-center align-items-center">
  <div className="col-lg-6 col-12 px-lg-2 ">

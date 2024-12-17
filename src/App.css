@@ -489,7 +489,7 @@ nav {
 .card {
   border-radius: 6px !important;
   border: none !important;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
 }
 
 @media (max-width:992px) {
@@ -890,3 +890,38 @@ border-radius: 10px;
 width:90% !important;
   position:absolute !important;
 }
+
+/* testimg */
+.testimg{
+  object-fit: cover !important;
+  background-size: cover !important;
+  height: 100vh;
+  background-position: center !important;
+  background-image: url("assets/image/people-taking-part-high-protocol-event.jpg");
+}
+/* .testimg1{
+  background-color: white;
+} */
+
+.carslider{
+  background-color: rgb(255, 255, 255) !important;
+}
+.imgc{
+  transition: 0.9s ease-in-out !important;
+  border-radius: 150px !important;
+}
+.tras{
+  /* background-image: url("assets/image/test\ \(1\).jpg"); */
+  transition: 0.9s ease-in-out !important;
+} 
+.testimg1{
+  /* height: 100%; */
+  background-color: rgba(255, 255, 255, 0.386) !important;
+}
+.c11{
+  background-color: var(--color) !important;
+}
+.testimg1{
+  transition: 0.9s ease-in-out !important;
+}
+/* testimg */
